@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1385790044538012474}
   - component: {fileID: 1385790044538012473}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,8 +66,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -56947919
-  m_SortingLayer: 3
+  m_SortingLayerID: 115696997
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e5819e950783caf46b84b57202f8312e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -90,7 +90,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1385790046401574733}
   - component: {fileID: 1385790046401574732}
-  m_Layer: 0
+  - component: {fileID: 294704224}
+  m_Layer: 18
   m_Name: Boss 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,3 +132,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &294704224
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385790046401574734}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.58, y: 0}
+  m_Size: {x: 2.06, y: 4.58}
+  m_Direction: 0

@@ -23,7 +23,7 @@ TagManager:
   - RisingLava
   - Player Projectile
   - Ghost Enemy
-  - 
+  - Boss
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 4238019377
+    locked: 0
+  - name: Boss
+    uniqueID: 115696997
     locked: 0
   - name: Interactables
     uniqueID: 897093793

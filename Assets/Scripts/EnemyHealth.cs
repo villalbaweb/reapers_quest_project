@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     // Config params
     [Header("Health")]
     [SerializeField] int health = 300;
+    [SerializeField] float timeToDestroyAfterDeath = 0.5f;
 
     [Header("Audio Effects")]
     [SerializeField] AudioClip dieAudioSFX = null;
@@ -54,7 +55,7 @@ public class EnemyHealth : MonoBehaviour
         }
         _animator.SetTrigger("Die");
         PlayDieSFX();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(timeToDestroyAfterDeath);
         Destroy(gameObject);
     }
 

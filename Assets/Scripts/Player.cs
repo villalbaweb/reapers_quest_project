@@ -13,8 +13,12 @@ public class Player : MonoBehaviour
     [SerializeField] Vector2 deathHit = new Vector2(0f, 15f);
 
     [Header("Player Death Handler")]
-    [Tooltip("The damage caused to the enemies when sliding")]
+    [Tooltip("Time after dead to the GameSession object process death")]
     [SerializeField] int timeToWaitWhendDie = 2;
+
+    [Tooltip("Layer names that are lethal on touch")]
+    [SerializeField] List<string> lethalLayers;
+
 
     [Header("Audio Effects")]
     [SerializeField] AudioClip jumpAudioSFX = null;
@@ -35,7 +39,6 @@ public class Player : MonoBehaviour
     bool isAlive;
     bool isMoveEnabled;
     bool isDieEnabled;
-    List<string> lethalLayers;
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +54,6 @@ public class Player : MonoBehaviour
         isAlive = true;
         isMoveEnabled = true;
         isDieEnabled = true;
-        lethalLayers = new List<string> { "Ghost Enemy", "Troll Enemy", "Obstacles", "Boss" };
     }
 
     // Update is called once per frame

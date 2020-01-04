@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
         isAlive = true;
         isMoveEnabled = true;
         isDieEnabled = true;
-        lethalLayers = new List<string> { "Ghost Enemy", "Troll Enemy", "Obstacles" };
+        lethalLayers = new List<string> { "Ghost Enemy", "Troll Enemy", "Obstacles", "Boss" };
     }
 
     // Update is called once per frame

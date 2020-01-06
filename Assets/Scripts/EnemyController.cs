@@ -10,8 +10,6 @@ public class EnemyController : MonoBehaviour
 
     // Cache
     Animator _animator;
-    CapsuleCollider2D _mainBodyCollider2D;
-    BoxCollider2D _feetCollider2D;
     EnemyHealth _enemyHealth;
     EnemyDieHandler _enemyDieHandler;
 
@@ -19,8 +17,6 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
-        _mainBodyCollider2D = GetComponent<CapsuleCollider2D>();
-        _feetCollider2D = GetComponent<BoxCollider2D>();
         _enemyHealth = GetComponent<EnemyHealth>();
         _enemyDieHandler = GetComponent<EnemyDieHandler>();
 

@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
 
     [Header("Audio Effects")]
     [SerializeField] AudioClip dieAudioSFX = null;
+    [SerializeField] float audioSFXVolume = 0.3f;
 
     // Cache
     Animator _animator;
@@ -56,7 +57,7 @@ public class EnemyController : MonoBehaviour
     {
         if (!dieAudioSFX) { return; }
 
-        AudioSource.PlayClipAtPoint(dieAudioSFX, Camera.main.transform.position, 0.3f);
+        AudioSource.PlayClipAtPoint(dieAudioSFX, Camera.main.transform.position, audioSFXVolume);
     }
 
 

@@ -240,3 +240,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToDestroyAfterDeath: 0.5
   dieAudioSFX: {fileID: 8300000, guid: 165ea7e2667af024d977a46e7d0ce4cf, type: 3}
+  audioSFXVolume: 0.4

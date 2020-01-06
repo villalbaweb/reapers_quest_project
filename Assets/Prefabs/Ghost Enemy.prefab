@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToDestroyAfterDeath: 0.5
   dieAudioSFX: {fileID: 8300000, guid: 4c79db06fbda34d459a00dd0f7a015b9, type: 3}
+  audioSFXVolume: 0.4
 --- !u!1 &2676056871245232044
 GameObject:
   m_ObjectHideFlags: 0

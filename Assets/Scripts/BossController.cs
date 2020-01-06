@@ -9,6 +9,8 @@ public class BossController : MonoBehaviour
 
     [Header("Audio Effects")]
     [SerializeField] AudioClip dieAudioSFX = null;
+    [SerializeField] AudioClip hurtAudioSFX = null;
+    [SerializeField] float audioSFXVolume = 0.3f;
 
     // cache
     Animator _animator;
@@ -34,6 +36,10 @@ public class BossController : MonoBehaviour
 
     private void OnHitEvent() {
         _animator.SetTrigger("TakeDamage");
+
+        if (!hurtAudioSFX) { return; }
+
+        AudioSource.PlayClipAtPoint(hurtAudioSFX, Camera.main.transform.position, audioSFXVolume);
     }
 
     private void OnDieEvent()
@@ -62,7 +68,7 @@ public class BossController : MonoBehaviour
     {
         if (!dieAudioSFX) { return; }
 
-        AudioSource.PlayClipAtPoint(dieAudioSFX, Camera.main.transform.position, 0.3f);
+        AudioSource.PlayClipAtPoint(dieAudioSFX, Camera.main.transform.position, audioSFXVolume);
     }
 
 }

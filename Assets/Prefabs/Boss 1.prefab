@@ -163,8 +163,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 300
-  timeToDestroyAfterDeath: 2
-  dieAudioSFX: {fileID: 0}
 --- !u!114 &1769980240963682724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,3 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b25b9c27b7a79e439af53a0e7988ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToDestroyAfterDeath: 2
+  dieAudioSFX: {fileID: 8300000, guid: 708447c72f32c3e40856eaed59b227b3, type: 3}
+  hurtAudioSFX: {fileID: 8300000, guid: bfe4d923154fb2f4787d3c386dff5a0a, type: 3}
+  audioSFXVolume: 0.7

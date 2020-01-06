@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 6806652767073857094}
   - component: {fileID: 108707521}
   - component: {fileID: -2402524228307806688}
+  - component: {fileID: 1394121166170473853}
   m_Layer: 12
   m_Name: Troll Enemy
   m_TagString: Untagged
@@ -238,6 +239,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16cc4af9260d5d24ba2d6a72e1ac929c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToDestroyAfterDeath: 0.5
   dieAudioSFX: {fileID: 8300000, guid: 165ea7e2667af024d977a46e7d0ce4cf, type: 3}
   audioSFXVolume: 0.4
+--- !u!114 &1394121166170473853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6806652767073857148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3b867b43a23ef6409a5fef398d8c804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDestroyAfterDeath: 0.5

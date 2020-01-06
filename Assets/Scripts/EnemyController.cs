@@ -4,9 +4,6 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     // Config params
-    [Header("Health")]
-    [SerializeField] float timeToDestroyAfterDeath = 0.5f;
-
     [Header("Audio Effects")]
     [SerializeField] AudioClip dieAudioSFX = null;
     [SerializeField] float audioSFXVolume = 0.3f;
@@ -16,6 +13,7 @@ public class EnemyController : MonoBehaviour
     CapsuleCollider2D _mainBodyCollider2D;
     BoxCollider2D _feetCollider2D;
     EnemyHealth _enemyHealth;
+    EnemyDieHandler _enemyDieHandler;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +22,8 @@ public class EnemyController : MonoBehaviour
         _mainBodyCollider2D = GetComponent<CapsuleCollider2D>();
         _feetCollider2D = GetComponent<BoxCollider2D>();
         _enemyHealth = GetComponent<EnemyHealth>();
+        _enemyDieHandler = GetComponent<EnemyDieHandler>();
+
         _enemyHealth.OnDie += OnDieEvent;
     }
 
@@ -33,24 +33,10 @@ public class EnemyController : MonoBehaviour
 
     private void OnDieEvent()
     {
-        StartCoroutine(DieVFX());
-    }
-
-    IEnumerator DieVFX()
-    {
-        if (_mainBodyCollider2D)
-        {
-            _mainBodyCollider2D.enabled = false;
-        }
-
-        if (_feetCollider2D)
-        {
-            _feetCollider2D.enabled = false;
-        }
         _animator.SetTrigger("Die");
         PlayDieSFX();
-        yield return new WaitForSeconds(timeToDestroyAfterDeath);
-        Destroy(gameObject);
+        
+        _enemyDieHandler.HandleDeath();
     }
 
     private void PlayDieSFX()

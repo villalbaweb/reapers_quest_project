@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class BossController : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
     // Config params
     [Header("Health")]
@@ -10,7 +10,7 @@ public class BossController : MonoBehaviour
     [Header("Audio Effects")]
     [SerializeField] AudioClip dieAudioSFX = null;
 
-    // cache
+    // Cache
     Animator _animator;
     CapsuleCollider2D _mainBodyCollider2D;
     BoxCollider2D _feetCollider2D;
@@ -23,17 +23,11 @@ public class BossController : MonoBehaviour
         _mainBodyCollider2D = GetComponent<CapsuleCollider2D>();
         _feetCollider2D = GetComponent<BoxCollider2D>();
         _enemyHealth = GetComponent<EnemyHealth>();
-        _enemyHealth.OnHit += OnHitEvent;
         _enemyHealth.OnDie += OnDieEvent;
     }
 
     private void OnDestroy() {
-        _enemyHealth.OnHit -= OnHitEvent;
         _enemyHealth.OnDie -= OnDieEvent;
-    }
-
-    private void OnHitEvent() {
-        _animator.SetTrigger("TakeDamage");
     }
 
     private void OnDieEvent()
@@ -64,5 +58,6 @@ public class BossController : MonoBehaviour
 
         AudioSource.PlayClipAtPoint(dieAudioSFX, Camera.main.transform.position, 0.3f);
     }
+
 
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2676056870376284836}
   - component: {fileID: 2676056870376284835}
   - component: {fileID: 2676056870376284834}
+  - component: {fileID: -2868976953217113373}
   m_Layer: 17
   m_Name: Ghost Enemy
   m_TagString: Untagged
@@ -106,7 +107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 300
-  dieAudioSFX: {fileID: 8300000, guid: 4c79db06fbda34d459a00dd0f7a015b9, type: 3}
 --- !u!114 &2676056870376284834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +121,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   timeToTurn: 10
+--- !u!114 &-2868976953217113373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2676056870376284840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16cc4af9260d5d24ba2d6a72e1ac929c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDestroyAfterDeath: 0.5
+  dieAudioSFX: {fileID: 8300000, guid: 4c79db06fbda34d459a00dd0f7a015b9, type: 3}
 --- !u!1 &2676056871245232044
 GameObject:
   m_ObjectHideFlags: 0

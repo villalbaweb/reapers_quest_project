@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    // Events
+    public delegate void HitEvent();
+    public event HitEvent OnHit;
+
     // Config params
     [Header("Health")]
     [SerializeField] int health = 300;
@@ -25,12 +27,6 @@ public class EnemyHealth : MonoBehaviour
         _mainBodyCollider2D = GetComponent<CapsuleCollider2D>();
         _feetCollider2D = GetComponent<BoxCollider2D>();
         isDead = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        CheckLife();   
     }
 
     private void CheckLife()
@@ -69,5 +65,10 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        CheckLife();
+
+        // emit event
+        if (OnHit != null && !isDead) OnHit();
+
     }
 }

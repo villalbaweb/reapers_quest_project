@@ -13,7 +13,7 @@ public class EnemyHealth : MonoBehaviour
     [Header("Health")]
     [SerializeField] int health = 300;
 
-    // Cache
+    // State
     bool isDead;
 
     private void Start()
@@ -21,22 +21,21 @@ public class EnemyHealth : MonoBehaviour
         isDead = false;
     }
 
-    private void CheckLife()
+    public void TakeDamage(int damage)
     {
-        if(!isDead && health <= 0)
+        if(isDead) { return; }
+
+        health -= damage;
+
+        if (health <= 0)
         {
             isDead = true;
             // emit OnDie event
-            if(OnDie != null) OnDie();
+            if (OnDie != null) OnDie();
+        } 
+        else
+        {
+            if (OnHit != null) OnHit();
         }
-    }
-
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-        CheckLife();
-
-        // emit OnHit event
-        if (!isDead && OnHit != null) OnHit();
     }
 }

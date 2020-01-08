@@ -3967,7 +3967,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 21300000, guid: 842e47b28e7725142bd4608370b10258, type: 3}
       - {fileID: 21300000, guid: 82de6f944194d1246b4c80665b7b30e7, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 2, y: -6, z: 0}
@@ -3975,7 +3975,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 21300000, guid: 842e47b28e7725142bd4608370b10258, type: 3}
       - {fileID: 21300000, guid: 82de6f944194d1246b4c80665b7b30e7, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 3, y: -6, z: 0}
@@ -3991,7 +3991,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 21300000, guid: 842e47b28e7725142bd4608370b10258, type: 3}
       - {fileID: 21300000, guid: 82de6f944194d1246b4c80665b7b30e7, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 5, y: -6, z: 0}
@@ -4071,7 +4071,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 21300000, guid: 842e47b28e7725142bd4608370b10258, type: 3}
       - {fileID: 21300000, guid: 82de6f944194d1246b4c80665b7b30e7, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 15, y: -6, z: 0}
@@ -4945,17 +4945,17 @@ PrefabInstance:
     - target: {fileID: 3407170451749180173, guid: d2fb2b4dbd0a50b429d0f4ee1c2127a3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1481.6599
+      value: -1485.8035
       objectReference: {fileID: 0}
     - target: {fileID: 3407170451749180173, guid: d2fb2b4dbd0a50b429d0f4ee1c2127a3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -717.8166
+      value: -716.5477
       objectReference: {fileID: 0}
     - target: {fileID: 3407170451749180402, guid: d2fb2b4dbd0a50b429d0f4ee1c2127a3,
         type: 3}
       propertyPath: orthographic size
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3407170451371342255, guid: d2fb2b4dbd0a50b429d0f4ee1c2127a3,
         type: 3}
@@ -7034,11 +7034,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -5.223427, y: 10.30212}
-      - {x: -18.302942, y: 10.1819515}
+    - - {x: -5.1816416, y: 9.758926}
+      - {x: -18.219376, y: 9.722325}
       - {x: -18.125849, y: -7.694948}
       - {x: 16.7407, y: -7.7435136}
-      - {x: 16.829613, y: 10.277126}
+      - {x: 16.913181, y: 9.650363}
 --- !u!19719996 &7535080071060788552
 TilemapCollider2D:
   m_ObjectHideFlags: 0

@@ -7,19 +7,62 @@ public class BossMovement : MonoBehaviour
 
     // Cache
     Rigidbody2D _rigidbody2D;
+    Timer _timer;
 
     // state
-    [SerializeField] bool movingRight;
+    [SerializeField] bool isMovingRight;
+    [SerializeField] bool isMoving;
 
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        movingRight = false;
+        _timer = GetComponent<Timer>();
+
+        InitializeDirectionControl();
+
+        SubscribeTimerEvents();
     }
 
-    void Update() {
-        Vector2 bossVelocity = new Vector2(movingRight ? moveSpeed : moveSpeed * -1, _rigidbody2D.velocity.y);
+
+
+    void OnDestroy() 
+    {
+        UnsubscribeTimerEvents();
+    }
+
+    void Update()
+    {
+        Move();
+    }
+
+    void Move()
+    {
+        Vector2 bossVelocity = isMoving 
+            ? new Vector2(isMovingRight ? moveSpeed : moveSpeed * -1, _rigidbody2D.velocity.y)
+            : new Vector2();
 
         _rigidbody2D.velocity = bossVelocity;
+    }
+
+    void InitializeDirectionControl()
+    {
+        isMovingRight = true;
+        isMoving = false;
+    }
+
+    void SubscribeTimerEvents()
+    {
+        _timer.OnTick += TimerTickAction;
+    }
+
+    void UnsubscribeTimerEvents()
+    {
+        _timer.OnTick -= TimerTickAction;
+    }
+
+    void TimerTickAction()
+    {
+        isMoving = !isMoving;
+        isMovingRight = isMoving ? !isMovingRight : isMovingRight;
     }
 }

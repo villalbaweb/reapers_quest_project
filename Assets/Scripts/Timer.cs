@@ -13,6 +13,7 @@ public class Timer : MonoBehaviour
     // Config Props
     [SerializeField] float totalTime = 30f;
     [SerializeField] float tickTime = 5f;
+    [SerializeField] bool cycle = false;
 
     // state
     float timeLeft;
@@ -30,13 +31,14 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isTimerFinished) { return; }
+        if (isTimerFinished && !cycle) { return; }
 
         timeLeft -= Time.deltaTime;
         if(timeLeft < 0)
         {
             if(OnFinished != null) OnFinished();
             isTimerFinished = true;
+            timeLeft = totalTime;
         }
 
         tickTimer += Time.deltaTime;

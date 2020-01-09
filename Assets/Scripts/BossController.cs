@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
@@ -13,6 +12,7 @@ public class BossController : MonoBehaviour
     Animator _animator;
     EnemyHealth _enemyHealth;
     EnemyDieHandler _enemyDieHandler;
+    BossMovement _bossMovement;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,7 @@ public class BossController : MonoBehaviour
         _animator = GetComponent<Animator>();
         _enemyHealth = GetComponent<EnemyHealth>();
         _enemyDieHandler = GetComponent<EnemyDieHandler>();
+        _bossMovement = GetComponent<BossMovement>();
 
         _enemyHealth.OnHit += OnHitEvent;
         _enemyHealth.OnDie += OnDieEvent;
@@ -42,6 +43,7 @@ public class BossController : MonoBehaviour
         PlayDieSFX();
 
         _enemyDieHandler.HandleDeath();
+        _bossMovement.StopMoving();
     }
 
     private void PlayHurtSFX()

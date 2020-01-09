@@ -23,8 +23,6 @@ public class BossMovement : MonoBehaviour
         SubscribeTimerEvents();
     }
 
-
-
     void OnDestroy() 
     {
         UnsubscribeTimerEvents();
@@ -64,5 +62,10 @@ public class BossMovement : MonoBehaviour
     {
         isMoving = !isMoving;
         isMovingRight = isMoving ? !isMovingRight : isMovingRight;
+    }
+
+    public void StopMoving() 
+    {
+        _timer.StopTimer();
     }
 }

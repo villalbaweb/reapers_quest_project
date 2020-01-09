@@ -19,6 +19,7 @@ public class Timer : MonoBehaviour
     float timeLeft;
     float tickTimer;
     bool isTimerFinished;
+    bool isTimerTurnedOff;
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +27,13 @@ public class Timer : MonoBehaviour
         timeLeft = totalTime;
         tickTimer = 0f;
         isTimerFinished = false;
+        isTimerTurnedOff = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isTimerFinished && !cycle) { return; }
+        if (isTimerTurnedOff || (isTimerFinished && !cycle)) { return; }
 
         timeLeft -= Time.deltaTime;
         if(timeLeft < 0)
@@ -57,5 +59,10 @@ public class Timer : MonoBehaviour
     public float GetTotalTime()
     {
         return totalTime;
+    }
+
+    public void StopTimer()
+    {
+        isTimerTurnedOff = true;
     }
 }

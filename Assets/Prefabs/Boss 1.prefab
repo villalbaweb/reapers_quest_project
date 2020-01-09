@@ -95,6 +95,8 @@ GameObject:
   - component: {fileID: 1769980240963682724}
   - component: {fileID: 391337970858259567}
   - component: {fileID: 7526548227389604198}
+  - component: {fileID: 1725091077799317381}
+  - component: {fileID: 1385790045986231826}
   m_Layer: 18
   m_Name: Boss 1
   m_TagString: Untagged
@@ -164,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71a49e161f2eb94fafe840a33418c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
+  health: 1500
 --- !u!114 &1769980240963682724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,3 +216,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1725091077799317381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385790046401574734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8fecde014081c498df84b8867c98db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 4
+  isMovingRight: 0
+  isMoving: 0
+--- !u!114 &1385790045986231826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385790046401574734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eb8c68e954f24845b889b524ef5cbac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalTime: 15
+  tickTime: 3
+  cycle: 1

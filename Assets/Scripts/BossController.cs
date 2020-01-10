@@ -13,6 +13,7 @@ public class BossController : MonoBehaviour
     EnemyHealth _enemyHealth;
     EnemyDieHandler _enemyDieHandler;
     BossMovement _bossMovement;
+    Rigidbody2D _rigidbody2D;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class BossController : MonoBehaviour
         _enemyHealth = GetComponent<EnemyHealth>();
         _enemyDieHandler = GetComponent<EnemyDieHandler>();
         _bossMovement = GetComponent<BossMovement>();
+        _rigidbody2D = GetComponent<Rigidbody2D>();
 
         _enemyHealth.OnHit += OnHitEvent;
         _enemyHealth.OnDie += OnDieEvent;
@@ -29,6 +31,11 @@ public class BossController : MonoBehaviour
     private void OnDestroy() {
         _enemyHealth.OnHit -= OnHitEvent;
         _enemyHealth.OnDie -= OnDieEvent;
+    }
+
+    void Update() 
+    {
+        _animator.SetFloat("Speed", Mathf.Abs(_rigidbody2D.velocity.x));    
     }
 
     private void OnHitEvent()

@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a3e54605f35d54f9b42d7bb6185b2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  specialAttackEnabledTime: 0.5
+  specialAttackEnabledTime: 1
   explosionParticleEffect: {fileID: 1468767462120383552, guid: 57fe095d0852c04419796befc356f14f,
     type: 3}
   explosionParticleSystemPosition: {fileID: 1224085443098843783}

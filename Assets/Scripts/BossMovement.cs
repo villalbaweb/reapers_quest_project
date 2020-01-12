@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Timer))]
 public class BossMovement : MonoBehaviour 
 {
     // config params

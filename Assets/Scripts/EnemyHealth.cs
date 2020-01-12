@@ -13,6 +13,13 @@ public class EnemyHealth : MonoBehaviour
     [Header("Health")]
     [SerializeField] int health = 300;
 
+    // props
+    public int RemainingHealth { 
+        get {
+            return health;
+        }
+    }
+
     // State
     bool isDead;
 

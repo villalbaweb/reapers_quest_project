@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyHealth), typeof(Animator))]
 public class BossAttack : MonoBehaviour {
     
     // config paranms
@@ -8,6 +9,7 @@ public class BossAttack : MonoBehaviour {
 
     // cache
     Animator _animator;
+    EnemyHealth _enemyHealth;
 
     // state
     float timeSincelastAttack = 0f;
@@ -15,11 +17,15 @@ public class BossAttack : MonoBehaviour {
 
     private void Start() {
         _animator = GetComponent<Animator>();
+        _enemyHealth = GetComponent<EnemyHealth>();
 
         timeBetweenAttacks = baseTimeBetweenAttacks;
     }
 
     private void Update() {
+
+        if(_enemyHealth.IsDead) { return; }
+
         Attack();
     }
 

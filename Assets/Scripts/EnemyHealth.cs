@@ -13,30 +13,29 @@ public class EnemyHealth : MonoBehaviour
     [Header("Health")]
     [SerializeField] int health = 300;
 
-    // props
+    // State
     public int RemainingHealth { 
         get {
             return health;
         }
     }
 
-    // State
-    bool isDead;
+    public bool IsDead { get; set; }
 
     private void Start()
     {
-        isDead = false;
+        IsDead = false;
     }
 
     public void TakeDamage(int damage)
     {
-        if(isDead) { return; }
+        if(IsDead) { return; }
 
         health -= damage;
 
         if (health <= 0)
         {
-            isDead = true;
+            IsDead = true;
             // emit OnDie event
             if (OnDie != null) OnDie();
         } 

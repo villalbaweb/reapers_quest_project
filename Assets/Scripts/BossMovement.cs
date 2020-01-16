@@ -68,5 +68,6 @@ public class BossMovement : MonoBehaviour
     public void StopMoving() 
     {
         _timer.StopTimer();
+        isMoving = false;
     }
 }

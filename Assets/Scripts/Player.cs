@@ -176,6 +176,14 @@ public class Player : MonoBehaviour
         AudioSource.PlayClipAtPoint(shootAudioSFX, Camera.main.transform.position);
     }
 
+    // This function is being trigger by any particle system with collision
+    // and send messages enable, so now we can kill the player with particles
+    private void OnParticleCollision(GameObject other) {
+        if (!isAlive) { return; }
+
+        StartCoroutine(DieHandler());
+    }
+
     #region Public Methods
 
     public void JumpButtonHit()

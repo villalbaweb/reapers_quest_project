@@ -308,3 +308,5 @@ MonoBehaviour:
   explosionParticleEffect: {fileID: 1468767462120383552, guid: 57fe095d0852c04419796befc356f14f,
     type: 3}
   explosionParticleSystemPosition: {fileID: 1224085443098843783}
+  attackSFX: {fileID: 8300000, guid: 30b7def198840e44993533469d869044, type: 3}
+  audioSFXVolume: 0.6

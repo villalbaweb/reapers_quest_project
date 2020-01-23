@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1546457987}
   - component: {fileID: 1546457988}
+  - component: {fileID: 491334927}
   m_Layer: 0
   m_Name: Game Music
   m_TagString: Untagged
@@ -41,7 +42,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b9e76c6798864404fa912542025ecb3f, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.48
   m_Pitch: 1
@@ -56,7 +57,7 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
-  BypassListenerEffects: 0
+  BypassListenerEffects: 1
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
@@ -127,6 +128,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &491334927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546457986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d53f664b88716844a27a5b369858ee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameMusic: {fileID: 8300000, guid: b9e76c6798864404fa912542025ecb3f, type: 3}
+  bossBattleMusic: {fileID: 8300000, guid: 79a9de4ea14aac0418e447670d6230fd, type: 3}
 --- !u!1 &3575389271383282817
 GameObject:
   m_ObjectHideFlags: 0

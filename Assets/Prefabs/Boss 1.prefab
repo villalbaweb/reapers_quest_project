@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 1385790045986231826}
   - component: {fileID: 4063083745627335925}
   - component: {fileID: 5415434903374993059}
+  - component: {fileID: 5945744255344988766}
   m_Layer: 18
   m_Name: Boss 1
   m_TagString: Untagged
@@ -310,3 +311,15 @@ MonoBehaviour:
   explosionParticleSystemPosition: {fileID: 1224085443098843783}
   attackSFX: {fileID: 8300000, guid: 30b7def198840e44993533469d869044, type: 3}
   audioSFXVolume: 0.6
+--- !u!114 &5945744255344988766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385790046401574734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631badf4c8a350a49aa1d385930b0334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

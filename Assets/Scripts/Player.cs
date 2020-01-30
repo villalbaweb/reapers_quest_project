@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     [SerializeField] float runSpeed = 1.0f;
     [SerializeField] float climLadderSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
+    [Tooltip("Layers where the player is able to jump from")]
+    [SerializeField] List<string> jumpLayers;
     [SerializeField] Vector2 deathHit = new Vector2(0f, 15f);
 
     [Header("Player Death Handler")]
@@ -18,10 +20,6 @@ public class Player : MonoBehaviour
 
     [Tooltip("Layer names that are lethal on touch")]
     [SerializeField] List<string> lethalLayers;
-
-    [Tooltip("Layers where the player is able to jump from")]
-    [SerializeField] List<string> jumpLayers;
-
 
     [Header("Audio Effects")]
     [SerializeField] AudioClip jumpAudioSFX = null;

@@ -19,6 +19,9 @@ public class Player : MonoBehaviour
     [Tooltip("Layer names that are lethal on touch")]
     [SerializeField] List<string> lethalLayers;
 
+    [Tooltip("Layers where the player is able to jump from")]
+    [SerializeField] List<string> jumpLayers;
+
 
     [Header("Audio Effects")]
     [SerializeField] AudioClip jumpAudioSFX = null;
@@ -189,7 +192,7 @@ public class Player : MonoBehaviour
     public void JumpButtonHit()
     {
         // Findout if the collider is actually touching specific layer
-        if(!_feetBoxCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")) || !isAlive)
+        if(!_feetBoxCollider2D.IsTouchingLayers(LayerMask.GetMask(jumpLayers.ToArray())) || !isAlive)
         {
             return;
         }

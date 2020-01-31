@@ -10,18 +10,26 @@ public class MovingPlatform : MonoBehaviour
     // state
     int movingPathWaypointIndex = 0;
 
-    private void Update() 
+    private void Update()
     {
-        if(movingPath != null) {
-            if (AtWaypoint()) {
+        PathHandler();
+        MovePlatform();
+    }
+
+    private void MovePlatform()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, movingPath.GetPathpoint(movingPathWaypointIndex), speed * Time.deltaTime);
+    }
+
+    private void PathHandler()
+    {
+        if (movingPath != null)
+        {
+            if (AtWaypoint())
+            {
                 movingPathWaypointIndex = movingPath.NextPosition(movingPathWaypointIndex);
             }
         }
-
-        float step = speed * Time.deltaTime;
-
-        // move sprite towards the target location
-        transform.position = Vector2.MoveTowards(transform.position, movingPath.GetPathpoint(movingPathWaypointIndex), step);
     }
 
     private bool AtWaypoint()

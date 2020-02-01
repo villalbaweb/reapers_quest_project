@@ -8,6 +8,8 @@ public class PlayerSlider : MonoBehaviour
     [Header("Slider Control")]
     [SerializeField] float slideSpeed = 15.0f;
     [SerializeField] float slideTime = 0.5f;
+    [Tooltip("Layers where the player is able to slide on")]
+    [SerializeField] List<string> slideLayers;
 
     [Header("Slide Damage")]
     [SerializeField] int damage = 1000;
@@ -46,7 +48,7 @@ public class PlayerSlider : MonoBehaviour
 
     private void Slide()
     {
-        bool isSlidingEnabled = _feetBoxCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")) && _joystick.Vertical <= -0.80 && !isSliding;
+        bool isSlidingEnabled = _feetBoxCollider2D.IsTouchingLayers(LayerMask.GetMask(slideLayers.ToArray())) && _joystick.Vertical <= -0.80 && !isSliding;
 
         if (isSlidingEnabled)
         {

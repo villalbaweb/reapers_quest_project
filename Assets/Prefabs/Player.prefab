@@ -4974,6 +4974,9 @@ MonoBehaviour:
   runSpeed: 10
   climLadderSpeed: 5
   jumpSpeed: 17
+  jumpLayers:
+  - Ground
+  - Moving Platform
   deathHit: {x: 15, y: 15}
   timeToWaitWhendDie: 2
   lethalLayers:
@@ -4981,9 +4984,6 @@ MonoBehaviour:
   - Troll Enemy
   - Obstacles
   - Boss
-  jumpLayers:
-  - Ground
-  - Moving Platform
   jumpAudioSFX: {fileID: 8300000, guid: 05581986175e1634e8141d8a0e1707a4, type: 3}
   dieAudioSFX: {fileID: 8300000, guid: 5607e471e82d5fb408435ddfad91efb3, type: 3}
   lifeupAudioSFX: {fileID: 8300000, guid: b94d129c4cad5b841a98d2df9cc38904, type: 3}
@@ -5043,4 +5043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slideSpeed: 15
   slideTime: 0.5
+  slideLayers:
+  - Ground
+  - Moving Platform
   damage: 1000

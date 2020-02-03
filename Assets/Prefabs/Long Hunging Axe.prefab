@@ -871,7 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8bee2c45ed50fe4bac24d1eff06221c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialSwingForce: 3000
+  initialSwingForce: 100
 --- !u!1 &5354412053748553469
 GameObject:
   m_ObjectHideFlags: 0

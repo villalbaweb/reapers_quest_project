@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5489729964213983426}
   - component: {fileID: 5489729964213983428}
   - component: {fileID: 5489729964213983429}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Chain (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,8 +69,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 492064635
+  m_SortingLayer: 9
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 116a3065849578647ac11ab123d49675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 5489729964606614997}
   - component: {fileID: 5489729964606614999}
   - component: {fileID: 5489729964606614996}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Chain (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,8 +213,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 492064635
+  m_SortingLayer: 9
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 116a3065849578647ac11ab123d49675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 5489729965245866016}
   - component: {fileID: 5489729965245866017}
   - component: {fileID: 5489729965245866014}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,8 +357,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 492064635
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d879d3edf9cc68043957289c1ec56844, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -610,7 +610,7 @@ GameObject:
   - component: {fileID: 5489729965273784718}
   - component: {fileID: 5489729965273784720}
   - component: {fileID: 5489729965273784721}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Chain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -666,8 +666,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 492064635
+  m_SortingLayer: 9
   m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: 116a3065849578647ac11ab123d49675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -754,7 +754,7 @@ GameObject:
   - component: {fileID: 5489729965340582707}
   - component: {fileID: 5489729965340582709}
   - component: {fileID: 5489729965340582706}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Chain (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -810,8 +810,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 492064635
+  m_SortingLayer: 9
   m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 116a3065849578647ac11ab123d49675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -894,7 +894,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5489729965483884317}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Long Hunging Axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -936,7 +936,7 @@ GameObject:
   - component: {fileID: 5489729965679193191}
   - component: {fileID: 5489729965679193188}
   - component: {fileID: 5489729965679193189}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Support
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -992,8 +992,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 492064635
+  m_SortingLayer: 9
   m_SortingOrder: 9
   m_Sprite: {fileID: 21300000, guid: 68ee84cc6f470dc4793875d0b7572f8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1040,7 +1040,7 @@ GameObject:
   - component: {fileID: 5489729965750447423}
   - component: {fileID: 5489729965750447809}
   - component: {fileID: 5489729965750447422}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Chain (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1096,8 +1096,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 492064635
+  m_SortingLayer: 9
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 116a3065849578647ac11ab123d49675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1184,7 +1184,7 @@ GameObject:
   - component: {fileID: 5489729966046553671}
   - component: {fileID: 5489729966046553668}
   - component: {fileID: 5489729966046553669}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Chain (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1240,8 +1240,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 492064635
+  m_SortingLayer: 9
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 116a3065849578647ac11ab123d49675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1328,7 +1328,7 @@ GameObject:
   - component: {fileID: 5489729966055869012}
   - component: {fileID: 5489729966055869013}
   - component: {fileID: 5489729966055869010}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Chain (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1384,8 +1384,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 492064635
+  m_SortingLayer: 9
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 116a3065849578647ac11ab123d49675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1472,7 +1472,7 @@ GameObject:
   - component: {fileID: 5489729966077236195}
   - component: {fileID: 5489729966077236197}
   - component: {fileID: 5489729966077236194}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Chain (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1528,8 +1528,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 492064635
+  m_SortingLayer: 9
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 116a3065849578647ac11ab123d49675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -139,7 +139,6 @@ GameObject:
   - component: {fileID: 5354412052695510965}
   - component: {fileID: 5354412052695510960}
   - component: {fileID: 5354412052695510966}
-  - component: {fileID: 5354412052695510967}
   m_Layer: 13
   m_Name: Chain (3)
   m_TagString: Untagged
@@ -255,22 +254,6 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
---- !u!70 &5354412052695510967
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5354412052695510961}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.21, y: 0.92}
-  m_Direction: 0
 --- !u!1 &5354412053082102432
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +266,6 @@ GameObject:
   - component: {fileID: 5354412053082102436}
   - component: {fileID: 5354412053082102439}
   - component: {fileID: 5354412053082102437}
-  - component: {fileID: 5354412053082102438}
   m_Layer: 13
   m_Name: Chain (4)
   m_TagString: Untagged
@@ -399,22 +381,6 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
---- !u!70 &5354412053082102438
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5354412053082102432}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.21, y: 0.92}
-  m_Direction: 0
 --- !u!1 &5354412053279265858
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +393,6 @@ GameObject:
   - component: {fileID: 5354412053279265862}
   - component: {fileID: 5354412053279265857}
   - component: {fileID: 5354412053279265863}
-  - component: {fileID: 5354412053279265856}
   m_Layer: 13
   m_Name: Chain (1)
   m_TagString: Untagged
@@ -543,22 +508,6 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
---- !u!70 &5354412053279265856
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5354412053279265858}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.21, y: 0.92}
-  m_Direction: 0
 --- !u!1 &5354412053422229608
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,7 +884,6 @@ GameObject:
   - component: {fileID: 5354412053748553441}
   - component: {fileID: 5354412053748553468}
   - component: {fileID: 5354412053748553442}
-  - component: {fileID: 5354412053748553443}
   m_Layer: 13
   m_Name: Chain
   m_TagString: Untagged
@@ -1051,22 +999,6 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 365
---- !u!70 &5354412053748553443
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5354412053748553469}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.21, y: 0.92}
-  m_Direction: 0
 --- !u!1 &5354412053990936881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,7 +1011,6 @@ GameObject:
   - component: {fileID: 5354412053990936884}
   - component: {fileID: 5354412053990936885}
   - component: {fileID: 5354412053990936886}
-  - component: {fileID: 5354412053990936887}
   m_Layer: 13
   m_Name: Chain (6)
   m_TagString: Untagged
@@ -1195,22 +1126,6 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
---- !u!70 &5354412053990936887
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5354412053990936881}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.21, y: 0.92}
-  m_Direction: 0
 --- !u!1 &5354412053998435618
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,7 +1138,6 @@ GameObject:
   - component: {fileID: 5354412053998435621}
   - component: {fileID: 5354412053998435622}
   - component: {fileID: 5354412053998435623}
-  - component: {fileID: 5354412053998435616}
   m_Layer: 13
   m_Name: Chain (7)
   m_TagString: Untagged
@@ -1339,22 +1253,6 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
---- !u!70 &5354412053998435616
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5354412053998435618}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.21, y: 0.92}
-  m_Direction: 0
 --- !u!1 &5354412054020056210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,7 +1265,6 @@ GameObject:
   - component: {fileID: 5354412054020056214}
   - component: {fileID: 5354412054020056209}
   - component: {fileID: 5354412054020056215}
-  - component: {fileID: 5354412054020056208}
   m_Layer: 13
   m_Name: Chain (2)
   m_TagString: Untagged
@@ -1483,22 +1380,6 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
---- !u!70 &5354412054020056208
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5354412054020056210}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.21, y: 0.92}
-  m_Direction: 0
 --- !u!1 &5354412054156843792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,7 +1494,6 @@ GameObject:
   - component: {fileID: 5354412054229408178}
   - component: {fileID: 5354412054229408333}
   - component: {fileID: 5354412054229408179}
-  - component: {fileID: 5354412054229408332}
   m_Layer: 13
   m_Name: Chain (5)
   m_TagString: Untagged
@@ -1729,19 +1609,3 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
---- !u!70 &5354412054229408332
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5354412054229408334}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.21, y: 0.92}
-  m_Direction: 0

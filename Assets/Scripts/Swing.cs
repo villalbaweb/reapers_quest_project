@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyHealth))]
-public class Sswing : MonoBehaviour
+public class Swing : MonoBehaviour
 {
     // config props
     [SerializeField] float initialSwingForce = 100f;

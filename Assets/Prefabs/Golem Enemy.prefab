@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5954427336255597006}
   - component: {fileID: 3789446479488514749}
   - component: {fileID: 155975827617079164}
-  - component: {fileID: 8846097098046613014}
+  - component: {fileID: 2612492476022257119}
   m_Layer: 20
   m_Name: Golem Enemy
   m_TagString: Untagged
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDestroyAfterDeath: 0.5
---- !u!114 &8846097098046613014
+--- !u!114 &2612492476022257119
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3037229962157069653}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80de40847f1bdc84c9e053c968cedde5, type: 3}
+  m_Script: {fileID: 11500000, guid: c1d9ae163687661448588a8feb788e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1

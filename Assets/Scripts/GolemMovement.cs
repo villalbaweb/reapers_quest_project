@@ -93,12 +93,7 @@ public class GolemMovement : MonoBehaviour
 
     private bool IsInAttackRange()
     {
-        Vector2 offset = _player.transform.position - transform.position;
-        float sqrLen = offset.sqrMagnitude;
-
-        return sqrLen <= chaseDistance * chaseDistance;
-
-        //return Vector2.Distance(_player.transform.position, transform.position) <= chaseDistance;
+        return Vector2.Distance(_player.transform.position, transform.position) <= chaseDistance;
     }
 
     // called by Unity

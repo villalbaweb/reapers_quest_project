@@ -17,6 +17,7 @@ public class GolemMovement : MonoBehaviour
 
     // state
     bool isAttackRange;
+    bool isAttackingOnEdge;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,11 @@ public class GolemMovement : MonoBehaviour
 
     public void Patrol()
     {
+        if(isAttackingOnEdge)
+        {
+            ChangeDirection();
+            isAttackingOnEdge = false;
+        }
         _animator.SetBool("InAttackRange", false);
         Vector2 playerVelocity;
         if (IsFacingRight())
@@ -69,19 +75,30 @@ public class GolemMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(!isAttackRange) 
+        if(!isAttackRange)
         {
-            transform.localScale = new Vector2(-(Mathf.Sign(_rigidbody2D.velocity.x)), 1f);
+            ChangeDirection();
         }
         else
         {
-            // its attacking...
+            _rigidbody2D.velocity = new Vector2(0, _rigidbody2D.velocity.y);
+            isAttackingOnEdge = true;
         }
+    }
+
+    private void ChangeDirection()
+    {
+        transform.localScale = new Vector2(IsFacingRight() ? -1 : 1, 1f);
     }
 
     private bool IsInAttackRange()
     {
-        return Vector3.Distance(_player.transform.position, transform.position) <= chaseDistance;
+        Vector2 offset = _player.transform.position - transform.position;
+        float sqrLen = offset.sqrMagnitude;
+
+        return sqrLen <= chaseDistance * chaseDistance;
+
+        //return Vector2.Distance(_player.transform.position, transform.position) <= chaseDistance;
     }
 
     // called by Unity

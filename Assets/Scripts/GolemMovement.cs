@@ -13,7 +13,7 @@ public class GolemMovement : MonoBehaviour
     Animator _animator;
 
     // state
-    bool isAttackRange;
+    bool isAttacking;
     bool isAttackingOnEdge;
 
     // Start is called before the first frame update
@@ -27,46 +27,56 @@ public class GolemMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isAttackRange = IsInAttackRange();
+        isAttacking = IsInAttackRange();
 
-        if(isAttackRange)
+        if(isAttacking)
         {
             Attack();
-            if (!isAttackingOnEdge)
-            {
-                Move(attackSpeed);
-            }
         }
         else
         {
             Patrol();
-            Move(patrolSpeed);
         }
+    }
+
+    private bool IsInAttackRange()
+    {
+        return Vector2.Distance(_player.transform.position, transform.position) <= chaseDistance;
     }
 
     private void Attack()
     {
+        _animator.SetBool("InAttackRange", true);
+
         if(!isAttackingOnEdge) 
         {
             CalculateDirection();
+            Move(attackSpeed);
         }
-        _animator.SetBool("InAttackRange", true);
-    }
-
-    private void CalculateDirection()
-    {
-        float distanceDiff = _player.transform.position.x - transform.position.x;
-        if((distanceDiff > 0 && !IsFacingRight()) || distanceDiff < 0 && IsFacingRight()) ChangeDirection();
     }
 
     public void Patrol()
     {
+        _animator.SetBool("InAttackRange", false);
+
         if (isAttackingOnEdge)
         {
             ChangeDirection();
             isAttackingOnEdge = false;
         }
-        _animator.SetBool("InAttackRange", false);
+
+        Move(patrolSpeed);
+    }
+
+    private void CalculateDirection()
+    {
+        float distanceDiff = _player.transform.position.x - transform.position.x;
+        if ((distanceDiff > 0 && !IsFacingRight()) || distanceDiff < 0 && IsFacingRight()) ChangeDirection();
+    }
+
+    private void ChangeDirection()
+    {
+        transform.localScale = new Vector2(IsFacingRight() ? -1 : 1, 1f);
     }
 
     private void Move(float moveSpeed)
@@ -91,7 +101,7 @@ public class GolemMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(!isAttackRange)
+        if(!isAttacking)
         {
             ChangeDirection();
         }
@@ -100,16 +110,6 @@ public class GolemMovement : MonoBehaviour
             _rigidbody2D.velocity = new Vector2(0, _rigidbody2D.velocity.y);
             isAttackingOnEdge = true;
         }
-    }
-
-    private void ChangeDirection()
-    {
-        transform.localScale = new Vector2(IsFacingRight() ? -1 : 1, 1f);
-    }
-
-    private bool IsInAttackRange()
-    {
-        return Vector2.Distance(_player.transform.position, transform.position) <= chaseDistance;
     }
 
     // called by Unity

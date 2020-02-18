@@ -173,7 +173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d9ae163687661448588a8feb788e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  patrolSpeed: 1.5
+  attackSpeed: 3
+  chaseDistance: 5
 --- !u!1 &3037229962901339465
 GameObject:
   m_ObjectHideFlags: 0

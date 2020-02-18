@@ -6,8 +6,8 @@ using UnityEngine;
 public class GolemMovement : MonoBehaviour
 {
     // Config Params
-    [SerializeField] float moveSpeed = 1f;
-    [SerializeField] float attackSpeed = 2f;
+    [SerializeField] float patrolSpeed = 1.5f;
+    [SerializeField] float attackSpeed = 4f;
     [SerializeField] float chaseDistance = 1f;
 
     // Cache
@@ -35,26 +35,39 @@ public class GolemMovement : MonoBehaviour
         if(isAttackRange)
         {
             Attack();
+            Move(attackSpeed);
         }
         else
         {
             Patrol();
+            Move(patrolSpeed);
         }
     }
 
     private void Attack()
     {
+        CalculateDirection();
         _animator.SetBool("InAttackRange", true);
+    }
+
+    private void CalculateDirection()
+    {
+        float distanceDiff = _player.transform.position.x - transform.position.x;
+        if((distanceDiff > 0 && !IsFacingRight()) || distanceDiff < 0 && IsFacingRight()) ChangeDirection();
     }
 
     public void Patrol()
     {
-        if(isAttackingOnEdge)
+        if (isAttackingOnEdge)
         {
             ChangeDirection();
             isAttackingOnEdge = false;
         }
         _animator.SetBool("InAttackRange", false);
+    }
+
+    private void Move(float moveSpeed)
+    {
         Vector2 playerVelocity;
         if (IsFacingRight())
         {

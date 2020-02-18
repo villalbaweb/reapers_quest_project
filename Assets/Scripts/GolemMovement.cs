@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GolemMovement : MonoBehaviour
 {
@@ -35,7 +32,10 @@ public class GolemMovement : MonoBehaviour
         if(isAttackRange)
         {
             Attack();
-            Move(attackSpeed);
+            if (!isAttackingOnEdge)
+            {
+                Move(attackSpeed);
+            }
         }
         else
         {
@@ -46,7 +46,10 @@ public class GolemMovement : MonoBehaviour
 
     private void Attack()
     {
-        CalculateDirection();
+        if(!isAttackingOnEdge) 
+        {
+            CalculateDirection();
+        }
         _animator.SetBool("InAttackRange", true);
     }
 

@@ -101,6 +101,8 @@ public class GolemMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if(collision.tag == "Player Projectile") return;
+
         if(!isAttacking)
         {
             ChangeDirection();

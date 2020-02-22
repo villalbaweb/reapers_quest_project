@@ -37,12 +37,7 @@ public class PlayerJumper : MonoBehaviour
             return;
         }
 
-        _animator.SetTrigger("Jump");
-
-        PlayJumpSFX();
-        Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
-        _rigidbody2D.velocity += jumpVelocityToAdd;
-
+        Jump(0f, wallJumpSpeed);
     }
 
     public void JumpButtonHit()
@@ -53,12 +48,16 @@ public class PlayerJumper : MonoBehaviour
             return;
         }
 
+        Jump(0f, jumpSpeed);
+    }
+
+    private void Jump(float xSpeed, float ySpeed)
+    {
         _animator.SetTrigger("Jump");
 
         PlayJumpSFX();
-        Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
+        Vector2 jumpVelocityToAdd = new Vector2(xSpeed, ySpeed);
         _rigidbody2D.velocity += jumpVelocityToAdd;
-
     }
 
     private void PlayJumpSFX()

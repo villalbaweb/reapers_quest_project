@@ -4879,6 +4879,8 @@ GameObject:
   - component: {fileID: 314183456}
   - component: {fileID: 1546666323}
   - component: {fileID: 1427047955}
+  - component: {fileID: 440070486}
+  - component: {fileID: 1502881162}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -4973,10 +4975,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 10
   climLadderSpeed: 5
-  jumpSpeed: 17
-  jumpLayers:
-  - Ground
-  - Moving Platform
   deathHit: {x: 15, y: 15}
   timeToWaitWhendDie: 2
   lethalLayers:
@@ -4985,7 +4983,6 @@ MonoBehaviour:
   - Obstacles
   - Boss
   - Golem Enemy
-  jumpAudioSFX: {fileID: 8300000, guid: 05581986175e1634e8141d8a0e1707a4, type: 3}
   dieAudioSFX: {fileID: 8300000, guid: 5607e471e82d5fb408435ddfad91efb3, type: 3}
   lifeupAudioSFX: {fileID: 8300000, guid: b94d129c4cad5b841a98d2df9cc38904, type: 3}
   shootAudioSFX: {fileID: 8300000, guid: 68960fb703a9cf84d90936bfed347c6f, type: 3}
@@ -5048,3 +5045,37 @@ MonoBehaviour:
   - Ground
   - Moving Platform
   damage: 1000
+--- !u!58 &440070486
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5770348657707227702}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.27672958, y: -0.5353236}
+  serializedVersion: 2
+  m_Radius: 0.04908371
+--- !u!114 &1502881162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5770348657707227702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db921d5f5877e42499702b718480d39e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpSpeed: 17
+  wallJumpSpeed: 25
+  jumpLayers:
+  - Ground
+  - Moving Platform
+  jumpAudioSFX: {fileID: 8300000, guid: 05581986175e1634e8141d8a0e1707a4, type: 3}

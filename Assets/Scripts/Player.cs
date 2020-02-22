@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,9 +8,6 @@ public class Player : MonoBehaviour
     [Header("Movement")]
     [SerializeField] float runSpeed = 1.0f;
     [SerializeField] float climLadderSpeed = 5f;
-    [SerializeField] float jumpSpeed = 5f;
-    [Tooltip("Layers where the player is able to jump from")]
-    [SerializeField] List<string> jumpLayers;
     [SerializeField] Vector2 deathHit = new Vector2(0f, 15f);
 
     [Header("Player Death Handler")]
@@ -22,7 +18,6 @@ public class Player : MonoBehaviour
     [SerializeField] List<string> lethalLayers;
 
     [Header("Audio Effects")]
-    [SerializeField] AudioClip jumpAudioSFX = null;
     [SerializeField] AudioClip dieAudioSFX = null;
     [SerializeField] AudioClip lifeupAudioSFX = null;
     [SerializeField] AudioClip shootAudioSFX = null;
@@ -156,13 +151,6 @@ public class Player : MonoBehaviour
         AudioSource.PlayClipAtPoint(dieAudioSFX, Camera.main.transform.position);
     }
 
-    private void PlayJumpSFX()
-    {
-        if (!jumpAudioSFX) { return; }
-
-        AudioSource.PlayClipAtPoint(jumpAudioSFX, Camera.main.transform.position);
-    }
-
     private void PlayLifeUpSFX()
     {
         if (!lifeupAudioSFX) { return; }
@@ -187,20 +175,9 @@ public class Player : MonoBehaviour
 
     #region Public Methods
 
-    public void JumpButtonHit()
+    public bool IsAlive()
     {
-        // Findout if the collider is actually touching specific layer
-        if(!_feetBoxCollider2D.IsTouchingLayers(LayerMask.GetMask(jumpLayers.ToArray())) || !isAlive)
-        {
-            return;
-        }
-
-        _animator.SetTrigger("Jump");
-
-        PlayJumpSFX();
-        Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
-        _rigidbody2D.velocity += jumpVelocityToAdd;
-
+        return isAlive;
     }
 
     public void ShootButtonHit()

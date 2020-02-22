@@ -1,13 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerJumper : MonoBehaviour
 {
     // config params
+    [Header("Normal Jump")]
     [SerializeField] float jumpSpeed = 5f;
-    [SerializeField] float wallJumpSpeed = 5f;
     [Tooltip("Layers where the player is able to jump from")]
     [SerializeField] List<string> jumpLayers;
+    
+    [Header("Wall Jump")]
+    [SerializeField] Vector2 wallJumpForce = new Vector2(12f, 20f);
+    [SerializeField] float disabledMoveControlTime = 0.5f;
 
     [Header("Audio Effects")]
     [SerializeField] AudioClip jumpAudioSFX = null;
@@ -37,7 +42,21 @@ public class PlayerJumper : MonoBehaviour
             return;
         }
 
-        Jump(0f, wallJumpSpeed);
+        StartCoroutine(WallJump());
+    }
+
+    IEnumerator WallJump()
+    {
+        _player.SetIsMoveEnabled(false);
+
+        PlayJumpSpecialFX();
+
+        Vector2 wallJumpForceToAdd = new Vector2(wallJumpForce.x * transform.localScale.x * -1, wallJumpForce.y);
+        _rigidbody2D.AddForce(wallJumpForceToAdd, ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(disabledMoveControlTime);
+
+        _player.SetIsMoveEnabled(true);
     }
 
     public void JumpButtonHit()
@@ -48,19 +67,24 @@ public class PlayerJumper : MonoBehaviour
             return;
         }
 
-        Jump(0f, jumpSpeed);
+        Jump(jumpSpeed);
     }
 
-    private void Jump(float xSpeed, float ySpeed)
+    private void Jump(float ySpeed)
     {
-        _animator.SetTrigger("Jump");
-
-        PlayJumpSFX();
-        Vector2 jumpVelocityToAdd = new Vector2(xSpeed, ySpeed);
+        PlayJumpSpecialFX();
+        Vector2 jumpVelocityToAdd = new Vector2(0f, ySpeed);
         _rigidbody2D.velocity += jumpVelocityToAdd;
     }
 
-    private void PlayJumpSFX()
+    private void PlayJumpSpecialFX()
+    {
+        _animator.SetTrigger("Jump");
+
+        PlayJumpSound();
+    }
+
+    private void PlayJumpSound()
     {
         if (!jumpAudioSFX) { return; }
 

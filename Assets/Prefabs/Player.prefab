@@ -5074,7 +5074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSpeed: 17
-  wallJumpSpeed: 25
+  wallJumpSpeed: 20
   jumpLayers:
   - Ground
   - Moving Platform

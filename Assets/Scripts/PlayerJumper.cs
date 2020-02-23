@@ -20,6 +20,7 @@ public class PlayerJumper : MonoBehaviour
     // cache
     CircleCollider2D _circleCollider2d;
     BoxCollider2D _feetBoxCollider2D;
+    CapsuleCollider2D _bodyCapsuleCollider2D;
     Animator _animator;
     Rigidbody2D _rigidbody2D;
     Player _player;
@@ -29,6 +30,7 @@ public class PlayerJumper : MonoBehaviour
     {
         _circleCollider2d = GetComponent<CircleCollider2D>();
         _feetBoxCollider2D = GetComponent<BoxCollider2D>();
+        _bodyCapsuleCollider2D = GetComponent<CapsuleCollider2D>();
         _animator = GetComponent<Animator>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _player = GetComponent<Player>();
@@ -37,7 +39,10 @@ public class PlayerJumper : MonoBehaviour
     public void WallJumpButtonHit()
     {
         // Findout if the collider is actually touching specific layer
-        if (!_circleCollider2d.IsTouchingLayers(LayerMask.GetMask("Ground")) || !_player.IsAlive())
+        if (!_circleCollider2d.IsTouchingLayers(LayerMask.GetMask("Ground")) || 
+            _feetBoxCollider2D.IsTouchingLayers(LayerMask.GetMask(jumpLayers.ToArray())) || 
+            _bodyCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ladders")) || 
+            !_player.IsAlive())
         {
             return;
         }

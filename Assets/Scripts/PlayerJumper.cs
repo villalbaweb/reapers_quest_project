@@ -36,18 +36,25 @@ public class PlayerJumper : MonoBehaviour
         _player = GetComponent<Player>();
     }
 
-    public void WallJumpButtonHit()
+    public void JumpButtonHit()
     {
-        // Findout if the collider is actually touching specific layer
-        if (!_circleCollider2d.IsTouchingLayers(LayerMask.GetMask("Ground")) || 
-            _feetBoxCollider2D.IsTouchingLayers(LayerMask.GetMask(jumpLayers.ToArray())) || 
-            _bodyCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ladders")) || 
-            !_player.IsAlive())
-        {
-            return;
-        }
+        if(!_player.IsAlive() || _bodyCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ladders"))) { return; }
 
-        StartCoroutine(WallJump());
+        if(_feetBoxCollider2D.IsTouchingLayers(LayerMask.GetMask(jumpLayers.ToArray())))
+        {
+            Jump(jumpSpeed);
+        }
+        else if (_circleCollider2d.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        {
+            StartCoroutine(WallJump());
+        }
+    }
+
+    private void Jump(float ySpeed)
+    {
+        PlayJumpSpecialFX();
+        Vector2 jumpVelocityToAdd = new Vector2(0f, ySpeed);
+        _rigidbody2D.velocity += jumpVelocityToAdd;
     }
 
     IEnumerator WallJump()
@@ -62,24 +69,6 @@ public class PlayerJumper : MonoBehaviour
         yield return new WaitForSeconds(disabledMoveControlTime);
 
         _player.SetIsMoveEnabled(true);
-    }
-
-    public void JumpButtonHit()
-    {
-        // Findout if the collider is actually touching specific layer
-        if (!_feetBoxCollider2D.IsTouchingLayers(LayerMask.GetMask(jumpLayers.ToArray())) || !_player.IsAlive())
-        {
-            return;
-        }
-
-        Jump(jumpSpeed);
-    }
-
-    private void Jump(float ySpeed)
-    {
-        PlayJumpSpecialFX();
-        Vector2 jumpVelocityToAdd = new Vector2(0f, ySpeed);
-        _rigidbody2D.velocity += jumpVelocityToAdd;
     }
 
     private void PlayJumpSpecialFX()

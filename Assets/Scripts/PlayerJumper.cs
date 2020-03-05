@@ -1,14 +1,12 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(GroundedRaycastDetector))]
 public class PlayerJumper : MonoBehaviour
 {
     // config params
     [Header("Normal Jump")]
     [SerializeField] float jumpSpeed = 5f;
-    [Tooltip("Layers where the player is able to jump from")]
-    [SerializeField] LayerMask jumpLayers;
     
     [Header("Wall Jump")]
     [SerializeField] Vector2 wallJumpForce = new Vector2(12f, 20f);
@@ -24,6 +22,7 @@ public class PlayerJumper : MonoBehaviour
     Animator _animator;
     Rigidbody2D _rigidbody2D;
     Player _player;
+    GroundedRaycastDetector _groundedRaycastDetector;
 
     // Start is called before the first frame update
     void Start()
@@ -34,15 +33,14 @@ public class PlayerJumper : MonoBehaviour
         _animator = GetComponent<Animator>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _player = GetComponent<Player>();
+        _groundedRaycastDetector = GetComponent<GroundedRaycastDetector>();
     }
 
     public void JumpButtonHit()
     {
         if(!_player.IsAlive() || _bodyCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ladders"))) { return; }
 
-        RaycastHit2D rayHit = Physics2D.Raycast(transform.position, Vector2.down, 1f, jumpLayers);
-
-        if (rayHit.collider != null && IsInLayerMask(rayHit.collider.gameObject.layer, jumpLayers))
+        if (_groundedRaycastDetector.IsGroundedOnLayers())
         {
             Jump(jumpSpeed);
         }
@@ -50,11 +48,6 @@ public class PlayerJumper : MonoBehaviour
         {
             StartCoroutine(WallJump());
         }
-    }
-
-    private bool IsInLayerMask(int layer, LayerMask layermask)
-    {
-        return layermask == (layermask | (1 << layer));
     }
 
     private void Jump(float ySpeed)

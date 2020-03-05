@@ -4881,6 +4881,7 @@ GameObject:
   - component: {fileID: 1427047955}
   - component: {fileID: 440070486}
   - component: {fileID: 1502881162}
+  - component: {fileID: 2880019747779322610}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -5074,9 +5075,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSpeed: 17
-  jumpLayers:
-    serializedVersion: 2
-    m_Bits: 524544
   wallJumpForce: {x: 12, y: 20}
   disabledMoveControlTime: 0.5
   jumpAudioSFX: {fileID: 8300000, guid: 05581986175e1634e8141d8a0e1707a4, type: 3}
+--- !u!114 &2880019747779322610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5770348657707227702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b38041417ebfd8248b398cf7eef3368f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpLayers:
+    serializedVersion: 2
+    m_Bits: 524544

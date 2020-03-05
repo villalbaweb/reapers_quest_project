@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(GroundedRaycastDetector))]
 public class PlayerSlider : MonoBehaviour
 {
     // Config Params
@@ -19,9 +20,9 @@ public class PlayerSlider : MonoBehaviour
     Animator _animator;
     Rigidbody2D _rigidbody2D;
     CapsuleCollider2D _bodyCapsuleCollider2D;
-    BoxCollider2D _feetBoxCollider2D;
     ParticleSystem _dustParticleSystem;
     Player _player;
+    GroundedRaycastDetector _groundedRaycastDetector;
 
     // State
     bool isSliding;
@@ -33,9 +34,9 @@ public class PlayerSlider : MonoBehaviour
         _animator = GetComponent<Animator>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _bodyCapsuleCollider2D = GetComponent<CapsuleCollider2D>();
-        _feetBoxCollider2D = GetComponent<BoxCollider2D>();
         _dustParticleSystem = transform.GetChild(2).gameObject.GetComponent<ParticleSystem>();
         _player = GetComponent<Player>();
+        _groundedRaycastDetector = GetComponent<GroundedRaycastDetector>();
 
         isSliding = false;
     }
@@ -48,7 +49,7 @@ public class PlayerSlider : MonoBehaviour
 
     private void Slide()
     {
-        bool isSlidingEnabled = _feetBoxCollider2D.IsTouchingLayers(LayerMask.GetMask(slideLayers.ToArray())) && _joystick.Vertical <= -0.80 && !isSliding;
+        bool isSlidingEnabled = _groundedRaycastDetector.IsGroundedOnLayers() && _joystick.Vertical <= -0.80 && !isSliding;
 
         if (isSlidingEnabled)
         {

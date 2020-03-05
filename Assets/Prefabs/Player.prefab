@@ -4875,11 +4875,10 @@ GameObject:
   - component: {fileID: 5770348657707227703}
   - component: {fileID: 3792161548382658018}
   - component: {fileID: 1563280434621551416}
+  - component: {fileID: 440070486}
   - component: {fileID: 471462203}
-  - component: {fileID: 314183456}
   - component: {fileID: 1546666323}
   - component: {fileID: 1427047955}
-  - component: {fileID: 440070486}
   - component: {fileID: 1502881162}
   - component: {fileID: 2880019747779322610}
   m_Layer: 10
@@ -4962,6 +4961,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0.011930704, y: -0.0138607025}
   m_Size: {x: 0.61930704, y: 1.1549826}
   m_Direction: 0
+--- !u!58 &440070486
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5770348657707227702}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.27672958, y: -0.5353236}
+  serializedVersion: 2
+  m_Radius: 0.04908371
 --- !u!114 &471462203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4987,32 +5002,6 @@ MonoBehaviour:
   dieAudioSFX: {fileID: 8300000, guid: 5607e471e82d5fb408435ddfad91efb3, type: 3}
   lifeupAudioSFX: {fileID: 8300000, guid: b94d129c4cad5b841a98d2df9cc38904, type: 3}
   shootAudioSFX: {fileID: 8300000, guid: 68960fb703a9cf84d90936bfed347c6f, type: 3}
---- !u!61 &314183456
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5770348657707227702}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5362139}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.23987389, y: 0.10722351}
-  m_EdgeRadius: 0
 --- !u!114 &1546666323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5046,22 +5035,6 @@ MonoBehaviour:
   - Ground
   - Moving Platform
   damage: 1000
---- !u!58 &440070486
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5770348657707227702}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.27672958, y: -0.5353236}
-  serializedVersion: 2
-  m_Radius: 0.04908371
 --- !u!114 &1502881162
 MonoBehaviour:
   m_ObjectHideFlags: 0

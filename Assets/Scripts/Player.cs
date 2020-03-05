@@ -27,7 +27,6 @@ public class Player : MonoBehaviour
     Animator _animator;
     Rigidbody2D _rigidbody2D;
     CapsuleCollider2D _bodyCapsuleCollider2D;
-    BoxCollider2D _feetBoxCollider2D;
     GameSession _gameSession;
 
     // State
@@ -43,7 +42,6 @@ public class Player : MonoBehaviour
         _animator = GetComponent<Animator>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _bodyCapsuleCollider2D = GetComponent<CapsuleCollider2D>();
-        _feetBoxCollider2D = GetComponent<BoxCollider2D>();
         _gameSession = FindObjectOfType<GameSession>();
 
         originalGravityScale = _rigidbody2D.gravityScale;
@@ -128,7 +126,7 @@ public class Player : MonoBehaviour
     {
         if(!isDieEnabled) { return; }
 
-        if (_bodyCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask(lethalLayers.ToArray())) || _feetBoxCollider2D.IsTouchingLayers(LayerMask.GetMask(lethalLayers.ToArray())))
+        if (_bodyCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask(lethalLayers.ToArray())))
         {
             StartCoroutine(DieHandler());
         }

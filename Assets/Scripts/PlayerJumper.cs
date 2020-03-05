@@ -8,7 +8,7 @@ public class PlayerJumper : MonoBehaviour
     [Header("Normal Jump")]
     [SerializeField] float jumpSpeed = 5f;
     [Tooltip("Layers where the player is able to jump from")]
-    [SerializeField] List<string> jumpLayers;
+    [SerializeField] LayerMask jumpLayers;
     
     [Header("Wall Jump")]
     [SerializeField] Vector2 wallJumpForce = new Vector2(12f, 20f);
@@ -40,7 +40,9 @@ public class PlayerJumper : MonoBehaviour
     {
         if(!_player.IsAlive() || _bodyCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ladders"))) { return; }
 
-        if(_feetBoxCollider2D.IsTouchingLayers(LayerMask.GetMask(jumpLayers.ToArray())))
+        RaycastHit2D rayHit = Physics2D.Raycast(transform.position, Vector2.down, 1f, jumpLayers);
+
+        if (rayHit.collider != null && IsInLayerMask(rayHit.collider.gameObject.layer, jumpLayers))
         {
             Jump(jumpSpeed);
         }
@@ -48,6 +50,11 @@ public class PlayerJumper : MonoBehaviour
         {
             StartCoroutine(WallJump());
         }
+    }
+
+    private bool IsInLayerMask(int layer, LayerMask layermask)
+    {
+        return layermask == (layermask | (1 << layer));
     }
 
     private void Jump(float ySpeed)

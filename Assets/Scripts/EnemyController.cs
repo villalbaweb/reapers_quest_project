@@ -11,14 +11,12 @@ public class EnemyController : MonoBehaviour
     // Cache
     Animator _animator;
     EnemyHealth _enemyHealth;
-    EnemyDieHandler _enemyDieHandler;
 
     // Start is called before the first frame update
     void Start()
     {
         _animator = GetComponent<Animator>();
         _enemyHealth = GetComponent<EnemyHealth>();
-        _enemyDieHandler = GetComponent<EnemyDieHandler>();
 
         _enemyHealth.OnDie += OnDieEvent;
     }
@@ -31,8 +29,6 @@ public class EnemyController : MonoBehaviour
     {
         _animator.SetTrigger("Die");
         PlayDieSFX();
-        
-        _enemyDieHandler.HandleDeath();
     }
 
     private void PlayDieSFX()

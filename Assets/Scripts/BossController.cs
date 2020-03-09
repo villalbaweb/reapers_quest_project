@@ -11,7 +11,6 @@ public class BossController : MonoBehaviour
     // cache
     Animator _animator;
     EnemyHealth _enemyHealth;
-    EnemyDieHandler _enemyDieHandler;
     Rigidbody2D _rigidbody2D;
 
 
@@ -20,7 +19,6 @@ public class BossController : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _enemyHealth = GetComponent<EnemyHealth>();
-        _enemyDieHandler = GetComponent<EnemyDieHandler>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
 
         _enemyHealth.OnHit += OnHitEvent;
@@ -48,8 +46,6 @@ public class BossController : MonoBehaviour
     {
         _animator.SetTrigger("Die");
         PlayDieSFX();
-
-        _enemyDieHandler?.HandleDeath();
     }
 
     private void PlayHurtSFX()

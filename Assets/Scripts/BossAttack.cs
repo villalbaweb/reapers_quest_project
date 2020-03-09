@@ -44,7 +44,7 @@ public class BossAttack : MonoBehaviour {
         }
     }
 
-    public void CalculateTimeBetweenAttacksBasedOnHealth(int initialHealth, int remainingHealth) {
+    private void CalculateTimeBetweenAttacksBasedOnHealth(int initialHealth, int remainingHealth) {
         float percentageLeft = (float)remainingHealth / (float)initialHealth;
 
         if (percentageLeft < .8f && percentageLeft > .5f) {

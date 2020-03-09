@@ -9,6 +9,7 @@ public class BossMovement : MonoBehaviour
     // Cache
     Rigidbody2D _rigidbody2D;
     Timer _timer;
+    EnemyHealth _enemyHealth;
 
     // state
     [SerializeField] bool isMovingRight;
@@ -18,15 +19,16 @@ public class BossMovement : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _timer = GetComponent<Timer>();
+        _enemyHealth = GetComponent<EnemyHealth>();
 
         InitializeDirectionControl();
 
-        SubscribeTimerEvents();
+        SubscribeEvents();
     }
 
     void OnDestroy() 
     {
-        UnsubscribeTimerEvents();
+        UnsubscribeEvents();
     }
 
     void Update()
@@ -49,14 +51,18 @@ public class BossMovement : MonoBehaviour
         isMoving = false;
     }
 
-    void SubscribeTimerEvents()
+    void SubscribeEvents()
     {
         _timer.OnTick += TimerTickAction;
+
+        _enemyHealth.OnDie += OnDieEvent;
     }
 
-    void UnsubscribeTimerEvents()
+    void UnsubscribeEvents()
     {
         _timer.OnTick -= TimerTickAction;
+
+        _enemyHealth.OnDie -= OnDieEvent;
     }
 
     void TimerTickAction()
@@ -65,7 +71,12 @@ public class BossMovement : MonoBehaviour
         isMovingRight = isMoving ? !isMovingRight : isMovingRight;
     }
 
-    public void StopMoving() 
+    private void OnDieEvent()
+    {
+        StopMoving();
+    }
+
+    private void StopMoving() 
     {
         _timer.StopTimer();
         isMoving = false;

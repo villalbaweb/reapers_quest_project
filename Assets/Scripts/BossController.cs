@@ -12,7 +12,6 @@ public class BossController : MonoBehaviour
     Animator _animator;
     EnemyHealth _enemyHealth;
     EnemyDieHandler _enemyDieHandler;
-    BossMovement _bossMovement;
     Rigidbody2D _rigidbody2D;
 
 
@@ -22,7 +21,6 @@ public class BossController : MonoBehaviour
         _animator = GetComponent<Animator>();
         _enemyHealth = GetComponent<EnemyHealth>();
         _enemyDieHandler = GetComponent<EnemyDieHandler>();
-        _bossMovement = GetComponent<BossMovement>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
 
         _enemyHealth.OnHit += OnHitEvent;
@@ -52,7 +50,6 @@ public class BossController : MonoBehaviour
         PlayDieSFX();
 
         _enemyDieHandler?.HandleDeath();
-        _bossMovement?.StopMoving();
     }
 
     private void PlayHurtSFX()

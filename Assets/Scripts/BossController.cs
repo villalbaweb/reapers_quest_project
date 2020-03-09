@@ -47,7 +47,7 @@ public class BossController : MonoBehaviour
 
     private void OnHitEvent()
     {
-        _bossAttack.CalculateTimeBetweenAttacksBasedOnHealth(initialBossHealth, _enemyHealth.RemainingHealth);
+        _bossAttack?.CalculateTimeBetweenAttacksBasedOnHealth(initialBossHealth, _enemyHealth.RemainingHealth);
 
         _animator.SetTrigger("TakeDamage");
         PlayHurtSFX();
@@ -58,8 +58,8 @@ public class BossController : MonoBehaviour
         _animator.SetTrigger("Die");
         PlayDieSFX();
 
-        _enemyDieHandler.HandleDeath();
-        _bossMovement.StopMoving();
+        _enemyDieHandler?.HandleDeath();
+        _bossMovement?.StopMoving();
     }
 
     private void PlayHurtSFX()

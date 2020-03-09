@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyHealth), typeof(Animator))]
@@ -14,12 +13,20 @@ public class BossAttack : MonoBehaviour {
     // state
     float timeSincelastAttack = 0f;
     float timeBetweenAttacks;
+    int initialBossHealth;
 
     private void Start() {
         _animator = GetComponent<Animator>();
         _enemyHealth = GetComponent<EnemyHealth>();
 
         timeBetweenAttacks = baseTimeBetweenAttacks;
+        initialBossHealth = _enemyHealth.RemainingHealth;
+
+        _enemyHealth.OnHit += OnHitEvent;
+    }
+    
+    private void OnDestroy() {
+        _enemyHealth.OnHit -= OnHitEvent;
     }
 
     private void Update() {
@@ -43,5 +50,10 @@ public class BossAttack : MonoBehaviour {
         if (percentageLeft < .8f && percentageLeft > .5f) {
             timeBetweenAttacks = baseTimeBetweenAttacks * percentageLeft;
         }
+    }
+
+    private void OnHitEvent()
+    {
+        CalculateTimeBetweenAttacksBasedOnHealth(initialBossHealth, _enemyHealth.RemainingHealth);
     }
 }

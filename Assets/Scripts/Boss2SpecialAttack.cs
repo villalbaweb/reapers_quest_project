@@ -2,6 +2,9 @@
 
 public class Boss2SpecialAttack : MonoBehaviour
 {
+    // config params
+    [SerializeField] GameObject projectile = null;
+
     private void AttackSFXPlayAnimationEvent()
     {
         print("AttackSFX Animation Event");
@@ -9,6 +12,7 @@ public class Boss2SpecialAttack : MonoBehaviour
 
     private void FireBallAttackAnimationEvent()
     {
-        print("Fireball Attack Animation Event");
+        Follower followerObject = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Follower>();
+        followerObject.target = FindObjectOfType<Player>().transform;
     }
 }

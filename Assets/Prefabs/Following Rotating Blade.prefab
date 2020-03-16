@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2828774600774484007}
   - component: {fileID: 4668001411171119312}
   - component: {fileID: 2828774600774484006}
-  - component: {fileID: 2828774600774484025}
   - component: {fileID: 2828774600774484005}
   m_Layer: 13
   m_Name: Following Rotating Blade
@@ -72,19 +71,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.92
---- !u!114 &2828774600774484025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2828774600774484004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7982d32f95a94244695c1d303899ac18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotation: -500
 --- !u!114 &2828774600774484005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,6 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2828774601285133118}
   - component: {fileID: 2828774601285133105}
+  - component: {fileID: 100525376041097837}
   m_Layer: 13
   m_Name: Body
   m_TagString: Untagged
@@ -180,3 +167,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &100525376041097837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2828774601285133119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7982d32f95a94244695c1d303899ac18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotation: -500

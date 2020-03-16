@@ -10,26 +10,20 @@ public class Follower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float step = CalculateStep();
+
         if(followEnabled)
-            Follow();
-        else
-            MoveForeward();
+            Follow(step);
+
+        transform.position += transform.right * step;
     }
 
-    private void Follow()
+    private void Follow(float step)
     {
-        // Move our position a step closer to the target.
-        transform.position = Vector3.MoveTowards(transform.position, target.position, CalculateStep());
-    }
-
-    private void MoveForeward()
-    {
-        //Get the direction vector between A and B
-        Vector3 Direction = transform.position - target.position;
-        //Normalize it
-        Direction.Normalize();
-        //Translate along the direction
-        transform.Translate(Direction * CalculateStep());
+        Vector3 vectorToTarget = target.position - transform.position;
+        float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
+        Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, q, step);
     }
 
     private float CalculateStep()

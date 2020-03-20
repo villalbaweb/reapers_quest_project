@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4668001411171119312}
   - component: {fileID: 2828774600774484006}
   - component: {fileID: 2828774600774484005}
+  - component: {fileID: -4627680427539153399}
+  - component: {fileID: 8475939699178536637}
   m_Layer: 13
   m_Name: Following Rotating Blade
   m_TagString: Untagged
@@ -86,6 +88,31 @@ MonoBehaviour:
   speed: 6
   followTime: 2
   target: {fileID: 0}
+--- !u!114 &-4627680427539153399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2828774600774484004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71a49e161f2eb94fafe840a33418c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 200
+--- !u!114 &8475939699178536637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2828774600774484004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bffdedb0b8e5a8643b7e3a41d6d88f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2828774601285133119
 GameObject:
   m_ObjectHideFlags: 0

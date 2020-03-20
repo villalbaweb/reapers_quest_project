@@ -5047,7 +5047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db921d5f5877e42499702b718480d39e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSpeed: 17
+  jumpSpeed: 18
   wallJumpForce: {x: 12, y: 20}
   disabledMoveControlTime: 0.5
   jumpAudioSFX: {fileID: 8300000, guid: 05581986175e1634e8141d8a0e1707a4, type: 3}

@@ -2,6 +2,8 @@
 
 public class Boss2Movement : MonoBehaviour
 {
+    const float BOSS2_ANIMATOR_MAX_SPEED = 3.0f;
+
     // Cache
     Rigidbody2D _rigidbody2D;
     EnemyHealth _enemyHealth;
@@ -47,22 +49,10 @@ public class Boss2Movement : MonoBehaviour
 
     private void CalculateMovementSpeed()
     {
-        if(_enemyHealth.RemainingHealth >= 2000)
-        {
-            calculatedMoveSpeed = 0;
-        }
-        else if (_enemyHealth.RemainingHealth >= 1500)
-        {
-            calculatedMoveSpeed = 1;
-        }
-        else if (_enemyHealth.RemainingHealth >= 1000)
-        {
-            calculatedMoveSpeed = 2;
-        }
-        else
-        {
-            calculatedMoveSpeed = 3;
-        }
+        float speedPercentage = 1 - ((float)_enemyHealth.RemainingHealth / (float)initialHealth);
+        float speed = BOSS2_ANIMATOR_MAX_SPEED * speedPercentage;
+
+        calculatedMoveSpeed = speed > 0.5 ? speed : 0;
     }
 
     private void Move()

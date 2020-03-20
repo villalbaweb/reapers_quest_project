@@ -336,7 +336,7 @@ BlendTree:
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 44e925b9b6123dc419f92d23f0b6db5a, type: 2}
-    m_Threshold: 1.5
+    m_Threshold: 0.5
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0

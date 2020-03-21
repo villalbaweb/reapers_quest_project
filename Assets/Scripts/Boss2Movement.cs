@@ -12,6 +12,7 @@ public class Boss2Movement : MonoBehaviour
     //status
     int initialHealth;
     float calculatedMoveSpeed;
+    bool isOnEdge = false;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +50,12 @@ public class Boss2Movement : MonoBehaviour
 
     private void CalculateMovementSpeed()
     {
+        if(isOnEdge)
+        {
+            calculatedMoveSpeed = 0;
+            return;
+        }
+
         float speedPercentage = 1 - ((float)_enemyHealth.RemainingHealth / (float)initialHealth);
         float speed = BOSS2_ANIMATOR_MAX_SPEED * speedPercentage;
 
@@ -68,5 +75,17 @@ public class Boss2Movement : MonoBehaviour
         }
 
         _rigidbody2D.velocity = bossMovement;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player Projectile") return;
+        isOnEdge = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if (other.tag == "Player Projectile") return;
+        isOnEdge = false;    
     }
 }

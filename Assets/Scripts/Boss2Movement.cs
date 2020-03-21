@@ -4,6 +4,9 @@ public class Boss2Movement : MonoBehaviour
 {
     const float BOSS2_ANIMATOR_MAX_SPEED = 3.0f;
 
+    //config params
+    [SerializeField] float distanceToTurn = 3f;
+
     // Cache
     Rigidbody2D _rigidbody2D;
     EnemyHealth _enemyHealth;
@@ -35,7 +38,7 @@ public class Boss2Movement : MonoBehaviour
     private void CalculateDirection()
     {
         float distanceDiff = _player.transform.position.x - transform.position.x;
-        if ((distanceDiff > 0 && !IsFacingRight()) || distanceDiff < 0 && IsFacingRight()) ChangeDirection();
+        if ((distanceDiff > distanceToTurn && !IsFacingRight()) || distanceDiff < -distanceToTurn && IsFacingRight()) ChangeDirection();
     }
 
     private void ChangeDirection()

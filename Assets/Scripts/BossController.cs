@@ -21,23 +21,25 @@ public class BossController : MonoBehaviour
         _enemyHealth = GetComponent<EnemyHealth>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
 
-        _enemyHealth.OnHit += OnHitEvent;
-        _enemyHealth.OnDie += OnDieEvent;
-
+        SubscribeHealthEvents();
     }
 
-    private void OnDestroy() {
-        _enemyHealth.OnHit -= OnHitEvent;
-        _enemyHealth.OnDie -= OnDieEvent;
+    private void OnDestroy() 
+    {
+        UnsubscribeHealthEvents();
     }
 
     void Update() 
     {
+        if (_enemyHealth.IsDead) return;
+
         _animator.SetFloat("Speed", Mathf.Abs(_rigidbody2D.velocity.x));    
     }
 
     private void OnHitEvent()
     {
+        if (_enemyHealth.IsDead) return;
+        
         _animator.SetTrigger("TakeDamage");
         PlayHurtSFX();
     }
@@ -46,6 +48,8 @@ public class BossController : MonoBehaviour
     {
         _animator.SetTrigger("Die");
         PlayDieSFX();
+
+        UnsubscribeHealthEvents();
     }
 
     private void PlayHurtSFX()
@@ -60,6 +64,18 @@ public class BossController : MonoBehaviour
         if (!dieAudioSFX) { return; }
 
         AudioSource.PlayClipAtPoint(dieAudioSFX, Camera.main.transform.position, audioSFXVolume);
+    }
+
+    private void SubscribeHealthEvents()
+    {
+        _enemyHealth.OnHit += OnHitEvent;
+        _enemyHealth.OnDie += OnDieEvent;
+    }
+
+    private void UnsubscribeHealthEvents()
+    {
+        _enemyHealth.OnHit -= OnHitEvent;
+        _enemyHealth.OnDie -= OnDieEvent;
     }
 
 }

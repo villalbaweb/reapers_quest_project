@@ -37,6 +37,8 @@ public class Boss2Movement : MonoBehaviour
 
     private void CalculateDirection()
     {
+        if(_enemyHealth.IsDead) return;
+
         float distanceDiff = _player.transform.position.x - transform.position.x;
         if ((distanceDiff > distanceToTurn && !IsFacingRight()) || distanceDiff < -distanceToTurn && IsFacingRight()) ChangeDirection();
     }
@@ -53,7 +55,7 @@ public class Boss2Movement : MonoBehaviour
 
     private void CalculateMovementSpeed()
     {
-        if(isOnEdge)
+        if(isOnEdge || _enemyHealth.IsDead)
         {
             calculatedMoveSpeed = 0;
             return;

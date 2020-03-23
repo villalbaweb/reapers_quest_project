@@ -118,7 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 100
   speed: 10
-  destroyAfter: 0.5
+  destroyAfter: 0.75
   destroyAudioSFX: {fileID: 8300000, guid: 76ad296cbf4fe4748b0fe717271c51ec, type: 3}
 --- !u!70 &981154114417157153
 CapsuleCollider2D:

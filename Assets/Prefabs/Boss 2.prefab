@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 2665055556362825940}
   - component: {fileID: 4321724047334111853}
   - component: {fileID: 2446382275286949191}
+  - component: {fileID: 8951616083711136807}
   m_Layer: 18
   m_Name: Boss 2
   m_TagString: Untagged
@@ -269,7 +270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38acfa1cf8a25274385d400edefa5407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
+  projectile: {fileID: 2828774600774484004, guid: 4118e6854ef377a428ed7ca025973f4d,
+    type: 3}
 --- !u!114 &2446382275286949191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,4 +284,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f6dbdb3f5387e44a19877cae240b74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stopFromEdgeDistance: 6
+  distanceToTurn: 3
+--- !u!114 &8951616083711136807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2665055558119363187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631badf4c8a350a49aa1d385930b0334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

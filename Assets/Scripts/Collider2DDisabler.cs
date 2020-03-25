@@ -12,7 +12,7 @@ public class Collider2DDisabler : MonoBehaviour
     {
         BossController bossGameObject = FindObjectOfType<BossController>();
 
-        _enemyHealth = bossGameObject.GetComponent<EnemyHealth>();
+        _enemyHealth = bossGameObject?.GetComponent<EnemyHealth>();
         _capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
 
@@ -35,11 +35,15 @@ public class Collider2DDisabler : MonoBehaviour
 
     private void SubscribeHealthEvents()
     {
+        if(!_enemyHealth) return;
+
         _enemyHealth.OnDie += OnDieEvent;
     }
 
     private void UnsubscribeHealthEvents()
     {
+        if (!_enemyHealth) return;
+        
         _enemyHealth.OnDie -= OnDieEvent;
     }
 

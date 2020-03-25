@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 837342950839783568}
   - component: {fileID: 1910890603084769310}
+  - component: {fileID: 8171259765889061861}
   m_Layer: 22
   m_Name: Spear
   m_TagString: Untagged
@@ -57,6 +58,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.4751544, y: 2.222824}
   m_EdgeRadius: 0
+--- !u!114 &8171259765889061861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834066519820169314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f89539a270ed3d446983aa4e16181075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2665055557104727507
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,11 +165,12 @@ GameObject:
   - component: {fileID: 5564609271336548825}
   - component: {fileID: 8225044785937663566}
   - component: {fileID: 5833185547683798048}
-  - component: {fileID: 1726223146}
   - component: {fileID: 2665055556362825940}
   - component: {fileID: 4321724047334111853}
   - component: {fileID: 2446382275286949191}
   - component: {fileID: 8951616083711136807}
+  - component: {fileID: 3569569556969645926}
+  - component: {fileID: 2829735693011460728}
   m_Layer: 18
   m_Name: Boss 2
   m_TagString: Untagged
@@ -290,19 +304,6 @@ MonoBehaviour:
   dieAudioSFX: {fileID: 8300000, guid: 708447c72f32c3e40856eaed59b227b3, type: 3}
   hurtAudioSFX: {fileID: 8300000, guid: bfe4d923154fb2f4787d3c386dff5a0a, type: 3}
   audioSFXVolume: 0.7
---- !u!114 &1726223146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2665055558119363187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3b867b43a23ef6409a5fef398d8c804, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeToDestroyAfterDeath: 1.5
 --- !u!114 &2665055556362825940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,5 +354,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 631badf4c8a350a49aa1d385930b0334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3569569556969645926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2665055558119363187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d9702eb08ea76e4cb0b634b80cdd37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDestroyAfterDeath: 1.5
+--- !u!114 &2829735693011460728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2665055558119363187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f89539a270ed3d446983aa4e16181075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

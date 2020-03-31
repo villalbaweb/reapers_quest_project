@@ -45,4 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rewardItem: {fileID: 5070211053087425985, guid: e7485e059634d964399335f522a086f8,
     type: 3}
-  numberOfItems: 10
+  numberOfItems: 25
+  maxXForceToSpawn: 15
+  maxYForceToSpawn: 10

@@ -35,8 +35,16 @@ public class BossDieHandler : MonoBehaviour
 
     IEnumerator DieVFX()
     {
+        RewardSpawnerHandler();
         yield return new WaitForSeconds(timeToDestroyAfterDeath);
         Destroy(gameObject);
+    }
+
+    private void RewardSpawnerHandler()
+    {
+        RewardSpawner _rewardSpawner = FindObjectOfType<RewardSpawner>();
+        _rewardSpawner.gameObject.transform.position = transform.position;
+        _rewardSpawner?.StartSpawn();
     }
 
     private void SubscribeHealthEvents()

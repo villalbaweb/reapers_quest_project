@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5070211053087425997}
   - component: {fileID: 5070211053087425994}
   - component: {fileID: 5070211053087425996}
-  - component: {fileID: 7622704925744546956}
+  - component: {fileID: 7709305744128681873}
   m_Layer: 23
   m_Name: Coin Rigid Body
   m_TagString: Untagged
@@ -56,7 +56,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &5070211053087425997
 Animator:
   serializedVersion: 3
@@ -106,8 +106,8 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.64, y: 0.64}
   m_Direction: 0
---- !u!58 &7622704925744546956
-CircleCollider2D:
+--- !u!61 &7709305744128681873
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -119,9 +119,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.07202196}
+  m_Offset: {x: -0.0023231506, y: -0.029041052}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.19332647
+  m_Size: {x: 0.25654793, y: 0.40756273}
+  m_EdgeRadius: 0
 --- !u!1 &5070211053226196593
 GameObject:
   m_ObjectHideFlags: 0

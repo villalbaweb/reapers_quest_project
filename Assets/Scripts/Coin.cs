@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Coin : MonoBehaviour
@@ -58,5 +57,7 @@ public class Coin : MonoBehaviour
         {
             _pickupParent = new GameObject(PICKUPS_PARENT_NAME);
         }
+
+        transform.parent = _pickupParent.transform;
     }
 }

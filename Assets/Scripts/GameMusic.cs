@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameMusic : MonoBehaviour
 {
@@ -31,6 +29,11 @@ public class GameMusic : MonoBehaviour
         _musicAudioSource.Stop();
         _musicAudioSource.clip = bossBattleMusic;
         _musicAudioSource.Play();
+    }
+
+    public void SwitchMusicMute(bool isMuted)
+    {
+        _musicAudioSource.mute = isMuted;
     }
 
 }

@@ -29,7 +29,6 @@ public class GameMenuPanelController : MonoBehaviour
     {
         foreach(GameObject control in _gameControls)
         {
-            // print($"{control.name}");
             control.SetActive(isEnable);
         }
     }

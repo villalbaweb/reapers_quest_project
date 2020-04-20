@@ -16,10 +16,12 @@ public class PauseButtonController : MonoBehaviour
 
     // cache
     Image _image;
+    GameSession _gameSession;
 
     private void Start() 
     {
-        _image = GetComponent<Image>();    
+        _image = GetComponent<Image>();   
+        _gameSession = FindObjectOfType<GameSession>(); 
     }
 
     public void PauseControl()
@@ -29,13 +31,13 @@ public class PauseButtonController : MonoBehaviour
         if (isPaused)
         {
             _image.sprite = continueSprite;
-            Time.timeScale = 0;
+            _gameSession.SetTimeScaleStop();
             EnableMenu();
         }
         else
         {
             _image.sprite = pauseSprite;
-            Time.timeScale = 1;
+            _gameSession.SetTimeScaleNormal();
             DisableMenu();
         }
 

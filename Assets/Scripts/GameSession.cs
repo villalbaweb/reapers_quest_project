@@ -99,6 +99,20 @@ public class GameSession : MonoBehaviour
 
     #endregion
 
+    #region TimeScale
+
+    public void SetTimeScaleStop()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void SetTimeScaleNormal()
+    {
+        Time.timeScale = 1;
+    }
+
+    #endregion
+
     private void ResetGameSession()
     {
         _levelLoader.LoadMainMenuScene();

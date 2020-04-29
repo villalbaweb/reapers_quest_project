@@ -12,6 +12,7 @@ public class BossController : MonoBehaviour
     Animator _animator;
     EnemyHealth _enemyHealth;
     Rigidbody2D _rigidbody2D;
+    GameSound _gameSound;
 
 
     // Start is called before the first frame update
@@ -20,6 +21,7 @@ public class BossController : MonoBehaviour
         _animator = GetComponent<Animator>();
         _enemyHealth = GetComponent<EnemyHealth>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _gameSound = FindObjectOfType<GameSound>();
 
         SubscribeHealthEvents();
     }
@@ -54,14 +56,14 @@ public class BossController : MonoBehaviour
 
     private void PlayHurtSFX()
     {
-        if (!hurtAudioSFX) { return; }
+        if (!hurtAudioSFX || _gameSound.IsSoundMute) { return; }
 
         AudioSource.PlayClipAtPoint(hurtAudioSFX, Camera.main.transform.position, audioSFXVolume);
     }
 
     private void PlayDieSFX()
     {
-        if (!dieAudioSFX) { return; }
+        if (!dieAudioSFX || _gameSound.IsSoundMute) { return; }
 
         AudioSource.PlayClipAtPoint(dieAudioSFX, Camera.main.transform.position, audioSFXVolume);
     }

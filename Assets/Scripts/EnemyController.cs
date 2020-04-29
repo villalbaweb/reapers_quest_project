@@ -11,12 +11,14 @@ public class EnemyController : MonoBehaviour
     // Cache
     Animator _animator;
     EnemyHealth _enemyHealth;
+    GameSound _gameSound;
 
     // Start is called before the first frame update
     void Start()
     {
         _animator = GetComponent<Animator>();
         _enemyHealth = GetComponent<EnemyHealth>();
+        _gameSound = FindObjectOfType<GameSound>();
 
         _enemyHealth.OnDie += OnDieEvent;
     }
@@ -33,7 +35,7 @@ public class EnemyController : MonoBehaviour
 
     private void PlayDieSFX()
     {
-        if (!dieAudioSFX) { return; }
+        if (!dieAudioSFX || _gameSound.IsSoundMute) { return; }
 
         AudioSource.PlayClipAtPoint(dieAudioSFX, Camera.main.transform.position, audioSFXVolume);
     }

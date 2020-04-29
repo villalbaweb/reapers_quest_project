@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     CapsuleCollider2D _bodyCapsuleCollider2D;
     CircleCollider2D _circleCollider2d;
     GameSession _gameSession;
+    GameSound _gameSound;
 
     // State
     float originalGravityScale;
@@ -45,6 +46,7 @@ public class Player : MonoBehaviour
         _bodyCapsuleCollider2D = GetComponent<CapsuleCollider2D>();
         _circleCollider2d = GetComponent<CircleCollider2D>();
         _gameSession = FindObjectOfType<GameSession>();
+        _gameSound = FindObjectOfType<GameSound>();
 
         originalGravityScale = _rigidbody2D.gravityScale;
         isAlive = true;
@@ -151,21 +153,21 @@ public class Player : MonoBehaviour
 
     private void PlayDieSFX()
     {
-        if (!dieAudioSFX) { return; }
+        if (!dieAudioSFX || _gameSound.IsSoundMute) { return; }
 
         AudioSource.PlayClipAtPoint(dieAudioSFX, Camera.main.transform.position);
     }
 
     private void PlayLifeUpSFX()
     {
-        if (!lifeupAudioSFX) { return; }
+        if (!lifeupAudioSFX || _gameSound.IsSoundMute) { return; }
 
         AudioSource.PlayClipAtPoint(lifeupAudioSFX, Camera.main.transform.position);
     }
 
     private void PlayShootSFX()
     {
-        if (!shootAudioSFX) { return; }
+        if (!shootAudioSFX || _gameSound.IsSoundMute) { return; }
 
         AudioSource.PlayClipAtPoint(shootAudioSFX, Camera.main.transform.position);
     }

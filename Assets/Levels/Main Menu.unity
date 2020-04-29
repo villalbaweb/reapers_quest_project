@@ -1831,7 +1831,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 21300000, guid: 842e47b28e7725142bd4608370b10258, type: 3}
       - {fileID: 21300000, guid: 82de6f944194d1246b4c80665b7b30e7, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -5, y: -2, z: 0}
@@ -2279,7 +2279,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 21300000, guid: 842e47b28e7725142bd4608370b10258, type: 3}
       - {fileID: 21300000, guid: 82de6f944194d1246b4c80665b7b30e7, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 10, y: -1, z: 0}
@@ -2911,7 +2911,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 21300000, guid: 1fdcddb08887e164d8bb956a160c23f1, type: 3}
       - {fileID: 21300000, guid: 0622a322b3e53a1498d095b892007b65, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 7, y: 1, z: 0}
@@ -2967,7 +2967,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 21300000, guid: 1fdcddb08887e164d8bb956a160c23f1, type: 3}
       - {fileID: 21300000, guid: 0622a322b3e53a1498d095b892007b65, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 14, y: 1, z: 0}
@@ -2975,7 +2975,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 21300000, guid: 1fdcddb08887e164d8bb956a160c23f1, type: 3}
       - {fileID: 21300000, guid: 0622a322b3e53a1498d095b892007b65, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 15, y: 1, z: 0}
@@ -3379,6 +3379,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5770348657506478848}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &361136364 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 361136364, guid: c5a4608c85d98bb40b9af3cd40815683,
+    type: 3}
+  m_PrefabInstance: {fileID: 4001594836524907529}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &361136366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361136364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be095a4ffd325934d91eb62e8f59c434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicOnSprite: {fileID: 21300000, guid: a239ebfd70819ab419253268a6225b57, type: 3}
+  musicOffSprite: {fileID: 21300000, guid: f4a0d29aae331cf46842f0a2cedc850b, type: 3}
 --- !u!4 &374250315 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5070211053087425998, guid: 0e66387bdef5c984dbb784224c3018e2,
@@ -6770,7 +6790,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 361136367, guid: c5a4608c85d98bb40b9af3cd40815683, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 361136366}
+    - target: {fileID: 361136367, guid: c5a4608c85d98bb40b9af3cd40815683, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchGameSoundMute
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 361136366, guid: c5a4608c85d98bb40b9af3cd40815683, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c5a4608c85d98bb40b9af3cd40815683, type: 3}
 --- !u!1001 &5531674592195702978
 PrefabInstance:

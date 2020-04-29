@@ -15,12 +15,14 @@ public class Star : MonoBehaviour
     GameObject _pickupParent;
     Animator _animator;
     GameSession _gameSession;
+    GameSound _gameSound;
 
     // Start is called before the first frame update
     void Start()
     {
         _animator = GetComponent<Animator>();
         _gameSession = FindObjectOfType<GameSession>();
+        _gameSound = FindObjectOfType<GameSound>();
 
         CreateStarParent();
     }
@@ -41,7 +43,7 @@ public class Star : MonoBehaviour
 
     private void PlayTakenSFX()
     {
-        if (!_takenSFX) { return; }
+        if (!_takenSFX || _gameSound.IsSoundMute) { return; }
 
         AudioSource.PlayClipAtPoint(_takenSFX, Camera.main.transform.position, 0.25f);
     }

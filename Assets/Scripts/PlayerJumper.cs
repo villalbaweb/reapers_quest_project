@@ -22,6 +22,7 @@ public class PlayerJumper : MonoBehaviour
     Rigidbody2D _rigidbody2D;
     Player _player;
     GroundedRaycastDetector _groundedRaycastDetector;
+    GameSound _gameSound;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class PlayerJumper : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _player = GetComponent<Player>();
         _groundedRaycastDetector = GetComponent<GroundedRaycastDetector>();
+        _gameSound = FindObjectOfType<GameSound>();
     }
 
     public void JumpButtonHit()
@@ -78,7 +80,7 @@ public class PlayerJumper : MonoBehaviour
 
     private void PlayJumpSound()
     {
-        if (!jumpAudioSFX) { return; }
+        if (!jumpAudioSFX || _gameSound.IsSoundMute) { return; }
 
         AudioSource.PlayClipAtPoint(jumpAudioSFX, Camera.main.transform.position);
     }

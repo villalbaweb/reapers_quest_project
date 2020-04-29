@@ -10,9 +10,17 @@ public class Boss1SpecialAttack : MonoBehaviour {
     [SerializeField] AudioClip attackSFX = null;
     [SerializeField] float audioSFXVolume = 0.3f;
 
+    // Cache
+    GameSound _gameSound;
+
+    void Start() 
+    {
+        _gameSound = FindObjectOfType<GameSound>();
+    }
+
     private void AttackSFXPlayAnimationEvent()
     {
-        if (!attackSFX) { return; }
+        if (!attackSFX || _gameSound.IsSoundMute) { return; }
 
         AudioSource.PlayClipAtPoint(attackSFX, Camera.main.transform.position, audioSFXVolume);
     }

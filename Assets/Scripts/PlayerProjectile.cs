@@ -18,6 +18,7 @@ public class PlayerProjectile : MonoBehaviour
     // Cache
     Player _player;
     Animator _animator;
+    GameSound _gameSound;
     float projectileDirection;
     bool isMoving = true;
 
@@ -25,6 +26,7 @@ public class PlayerProjectile : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
+        _gameSound = FindObjectOfType<GameSound>();
         SetProjectileDirection();
         StartCoroutine(DestroyProjectileAfter());
     }
@@ -86,7 +88,7 @@ public class PlayerProjectile : MonoBehaviour
 
     private void PlayDestroySFX()
     {
-        if (!destroyAudioSFX) { return; }
+        if (!destroyAudioSFX || _gameSound.IsSoundMute) { return; }
 
         AudioSource.PlayClipAtPoint(destroyAudioSFX, Camera.main.transform.position);
     }

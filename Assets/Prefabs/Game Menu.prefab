@@ -293,7 +293,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 361136366}
-          m_MethodName: SwitchGameMusicMute
+          m_MethodName: SwitchGameSoundMute
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 361136364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08b2d7c7dfb4eb34599bfe73a1b5bde7, type: 3}
+  m_Script: {fileID: 11500000, guid: be095a4ffd325934d91eb62e8f59c434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   musicOnSprite: {fileID: 21300000, guid: a239ebfd70819ab419253268a6225b57, type: 3}

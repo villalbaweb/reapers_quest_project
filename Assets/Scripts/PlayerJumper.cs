@@ -80,8 +80,6 @@ public class PlayerJumper : MonoBehaviour
 
     private void PlayJumpSound()
     {
-        if (!jumpAudioSFX || _gameSound.IsSoundMute) { return; }
-
-        AudioSource.PlayClipAtPoint(jumpAudioSFX, Camera.main.transform.position);
+        _gameSound.PlayClipAtCamera(jumpAudioSFX);
     }
 }

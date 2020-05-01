@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Star : MonoBehaviour
@@ -43,9 +42,7 @@ public class Star : MonoBehaviour
 
     private void PlayTakenSFX()
     {
-        if (!_takenSFX || _gameSound.IsSoundMute) { return; }
-
-        AudioSource.PlayClipAtPoint(_takenSFX, Camera.main.transform.position, 0.25f);
+        _gameSound.PlayClipAtCamera(_takenSFX, 0.25f);
     }
 
     private void CreateStarParent()

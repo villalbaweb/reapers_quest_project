@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerProjectile : MonoBehaviour
@@ -88,8 +87,6 @@ public class PlayerProjectile : MonoBehaviour
 
     private void PlayDestroySFX()
     {
-        if (!destroyAudioSFX || _gameSound.IsSoundMute) { return; }
-
-        AudioSource.PlayClipAtPoint(destroyAudioSFX, Camera.main.transform.position);
+        _gameSound.PlayClipAtCamera(destroyAudioSFX);
     }
 }

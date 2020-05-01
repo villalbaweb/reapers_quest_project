@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
     // Config params
     [Header("Audio Effects")]
     [SerializeField] AudioClip dieAudioSFX = null;
-    [SerializeField] float audioSFXVolume = 0.3f;
 
     // Cache
     Animator _animator;
@@ -35,9 +33,7 @@ public class EnemyController : MonoBehaviour
 
     private void PlayDieSFX()
     {
-        if (!dieAudioSFX || _gameSound.IsSoundMute) { return; }
-
-        AudioSource.PlayClipAtPoint(dieAudioSFX, Camera.main.transform.position, audioSFXVolume);
+        _gameSound.PlayClipAtCamera(dieAudioSFX);
     }
 
 

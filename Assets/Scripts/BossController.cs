@@ -6,7 +6,6 @@ public class BossController : MonoBehaviour
     [Header("Audio Effects")]
     [SerializeField] AudioClip dieAudioSFX = null;
     [SerializeField] AudioClip hurtAudioSFX = null;
-    [SerializeField] float audioSFXVolume = 0.3f;
 
     // cache
     Animator _animator;
@@ -56,16 +55,12 @@ public class BossController : MonoBehaviour
 
     private void PlayHurtSFX()
     {
-        if (!hurtAudioSFX || _gameSound.IsSoundMute) { return; }
-
-        AudioSource.PlayClipAtPoint(hurtAudioSFX, Camera.main.transform.position, audioSFXVolume);
+        _gameSound.PlayClipAtCamera(hurtAudioSFX);
     }
 
     private void PlayDieSFX()
     {
-        if (!dieAudioSFX || _gameSound.IsSoundMute) { return; }
-
-        AudioSource.PlayClipAtPoint(dieAudioSFX, Camera.main.transform.position, audioSFXVolume);
+        _gameSound.PlayClipAtCamera(dieAudioSFX);
     }
 
     private void SubscribeHealthEvents()

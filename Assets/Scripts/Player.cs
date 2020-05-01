@@ -153,23 +153,17 @@ public class Player : MonoBehaviour
 
     private void PlayDieSFX()
     {
-        if (!dieAudioSFX || _gameSound.IsSoundMute) { return; }
-
-        AudioSource.PlayClipAtPoint(dieAudioSFX, Camera.main.transform.position);
+        _gameSound.PlayClipAtCamera(dieAudioSFX);
     }
 
     private void PlayLifeUpSFX()
     {
-        if (!lifeupAudioSFX || _gameSound.IsSoundMute) { return; }
-
-        AudioSource.PlayClipAtPoint(lifeupAudioSFX, Camera.main.transform.position);
+        _gameSound.PlayClipAtCamera(lifeupAudioSFX);
     }
 
     private void PlayShootSFX()
     {
-        if (!shootAudioSFX || _gameSound.IsSoundMute) { return; }
-
-        AudioSource.PlayClipAtPoint(shootAudioSFX, Camera.main.transform.position);
+        _gameSound.PlayClipAtCamera(shootAudioSFX);
     }
 
     // This function is being trigger by any particle system with collision

@@ -8,7 +8,6 @@ public class Boss1SpecialAttack : MonoBehaviour {
     [SerializeField] GameObject explosionParticleEffect = null;
     [SerializeField] Transform explosionParticleSystemPosition = null;
     [SerializeField] AudioClip attackSFX = null;
-    [SerializeField] float audioSFXVolume = 0.3f;
 
     // Cache
     GameSound _gameSound;
@@ -20,9 +19,7 @@ public class Boss1SpecialAttack : MonoBehaviour {
 
     private void AttackSFXPlayAnimationEvent()
     {
-        if (!attackSFX || _gameSound.IsSoundMute) { return; }
-
-        AudioSource.PlayClipAtPoint(attackSFX, Camera.main.transform.position, audioSFXVolume);
+        _gameSound.PlayClipAtCamera(attackSFX);
     }
 
     private void AttackAnimationEvent()

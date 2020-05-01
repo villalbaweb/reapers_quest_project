@@ -6,6 +6,10 @@ public class GameSound : MonoBehaviour
     [SerializeField] float audioVolume = 1f;
 
     // state
+    public bool IsSoundMute
+    {
+        get { return _isSoundMute; }
+    }
     private bool _isSoundMute = false;
 
     public void SwitchSoundMute(bool isMuted)

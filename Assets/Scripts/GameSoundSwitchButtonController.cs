@@ -13,12 +13,15 @@ public class GameSoundSwitchButtonController : MonoBehaviour
     GameSound _gameSound;
 
     // status
-    bool isGameSoundMuted = false;
+    bool isGameSoundMuted;
 
     void Start()
     {
         _image = GetComponent<Image>();
         _gameSound = FindObjectOfType<GameSound>();
+
+        isGameSoundMuted = _gameSound.IsSoundMute;
+        UpdateButtonImage();
     }
 
     public void SwitchGameSoundMute()
@@ -27,6 +30,11 @@ public class GameSoundSwitchButtonController : MonoBehaviour
 
         _gameSound.SwitchSoundMute(isGameSoundMuted);
 
+        UpdateButtonImage();
+    }
+
+    private void UpdateButtonImage()
+    {
         _image.sprite = isGameSoundMuted ? musicOffSprite : musicOnSprite;
     }
 }

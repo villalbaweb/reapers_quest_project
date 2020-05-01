@@ -21,6 +21,7 @@ public class GameSoundSwitchButtonController : MonoBehaviour
         _gameSound = FindObjectOfType<GameSound>();
 
         isGameSoundMuted = _gameSound.IsSoundMute;
+        
         UpdateButtonImage();
     }
 

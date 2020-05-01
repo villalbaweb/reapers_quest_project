@@ -9,6 +9,12 @@ public class GameMusic : MonoBehaviour
     // cache
     AudioSource _musicAudioSource;
 
+    // status
+    public bool isMuted
+    {
+        get { return _musicAudioSource ? _musicAudioSource.mute : false; }
+    }
+
     // Start is called before the first frame update
     void Start()
     {

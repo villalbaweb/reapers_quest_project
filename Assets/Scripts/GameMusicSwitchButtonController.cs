@@ -18,7 +18,11 @@ public class GameMusicSwitchButtonController : MonoBehaviour
     void Start() 
     {
         _image = GetComponent<Image>();
-        _gameMusic = FindObjectOfType<GameMusic>();    
+        _gameMusic = FindObjectOfType<GameMusic>(); 
+
+        isGameMusicMuted = _gameMusic.isMuted;
+
+        UpdateButtonImage();  
     }
 
     public void SwitchGameMusicMute()
@@ -27,7 +31,11 @@ public class GameMusicSwitchButtonController : MonoBehaviour
 
         _gameMusic.SwitchMusicMute(isGameMusicMuted);
 
-        _image.sprite = isGameMusicMuted ? musicOffSprite : musicOnSprite;
+        UpdateButtonImage();
     }
 
+    private void UpdateButtonImage()
+    {
+        _image.sprite = isGameMusicMuted ? musicOffSprite : musicOnSprite;
+    }
 }

@@ -24,6 +24,6 @@ public class GameSound : MonoBehaviour
 
         float playSoundVolume = specificVolume == -1 ? audioVolume : specificVolume;
 
-        AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position, playSoundVolume);
+        AudioSource.PlayClipAtPoint(clip, transform.position, playSoundVolume);
     }
 }

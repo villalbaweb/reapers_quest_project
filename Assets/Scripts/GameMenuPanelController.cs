@@ -25,6 +25,11 @@ public class GameMenuPanelController : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     private void EnableDisableGameControls(bool isEnable)
     {
         foreach(GameObject control in _gameControls)

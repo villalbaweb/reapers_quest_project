@@ -26,6 +26,10 @@ public class Star : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Player _player = collision.GetComponent<Player>();
+
+        if (!_player || !_player.IsAlive()) return;
+        
         StartCoroutine(TakeStar());
     }
 

@@ -28,7 +28,7 @@ public class Coin : MonoBehaviour
     {
         Player _player = collision.GetComponent<Player>();
 
-        if(!_player) return;
+        if(!_player || !_player.IsAlive()) return;
 
         StartCoroutine(TakeCoin());
     }

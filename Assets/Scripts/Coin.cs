@@ -22,8 +22,6 @@ public class Coin : MonoBehaviour
         _animator = GetComponent<Animator>();
         _gameSession = FindObjectOfType<GameSession>();
         _gameSound = FindObjectOfType<GameSound>();
-
-        CreateCoinParent();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -47,17 +45,5 @@ public class Coin : MonoBehaviour
     private void PlayTakenSFX()
     {
         _gameSound.PlayClipAtCamera(_takenSFX, 0.25f);
-    }
-
-    private void CreateCoinParent()
-    {
-        _pickupParent = GameObject.Find(PICKUPS_PARENT_NAME);
-
-        if (!_pickupParent)
-        {
-            _pickupParent = new GameObject(PICKUPS_PARENT_NAME);
-        }
-
-        transform.parent = _pickupParent.transform;
     }
 }

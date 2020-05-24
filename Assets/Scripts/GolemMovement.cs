@@ -27,6 +27,8 @@ public class GolemMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FindNewPlayerObjectAfterDeath();
+
         isAttacking = IsInAttackRange();
 
         if(isAttacking)
@@ -36,6 +38,14 @@ public class GolemMovement : MonoBehaviour
         else
         {
             Patrol();
+        }
+    }
+
+    private void FindNewPlayerObjectAfterDeath()
+    {
+        if(!_player)
+        {
+            _player = FindObjectOfType<Player>();
         }
     }
 

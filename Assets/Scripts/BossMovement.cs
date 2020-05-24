@@ -60,6 +60,7 @@ public class BossMovement : MonoBehaviour
 
     void UnsubscribeEvents()
     {
+        if(!_timer || !_enemyHealth) return;
         _timer.OnTick -= TimerTickAction;
 
         _enemyHealth.OnDie -= OnDieEvent;

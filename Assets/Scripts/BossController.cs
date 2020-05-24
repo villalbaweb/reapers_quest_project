@@ -71,6 +71,7 @@ public class BossController : MonoBehaviour
 
     private void UnsubscribeHealthEvents()
     {
+        if(!_enemyHealth) return;
         _enemyHealth.OnHit -= OnHitEvent;
         _enemyHealth.OnDie -= OnDieEvent;
     }

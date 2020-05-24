@@ -14,6 +14,7 @@ public class BossFightMusic : MonoBehaviour
     }
 
     private void OnDestroy() {
+        if(!_gameMusic) return;
         _gameMusic.PlayRegularGameMusic();
     }
 

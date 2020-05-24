@@ -26,6 +26,7 @@ public class BossAttack : MonoBehaviour {
     }
     
     private void OnDestroy() {
+        if(_enemyHealth) return;
         _enemyHealth.OnHit -= OnHitEvent;
     }
 

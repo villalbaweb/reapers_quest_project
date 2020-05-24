@@ -54,6 +54,7 @@ public class BossDieHandler : MonoBehaviour
 
     private void UnsubscribeHealthEvents()
     {
+        if(!_enemyHealth) return;
         _enemyHealth.OnDie -= OnDieEvent;
     }
 

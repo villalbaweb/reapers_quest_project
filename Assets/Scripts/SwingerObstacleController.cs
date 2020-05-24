@@ -20,6 +20,8 @@ public class SwingerObstacleController : MonoBehaviour
 
     private void OnDestroy() 
     {
+        if(!_enemyHealth) return;
+        
         _enemyHealth.OnDie -= OnDestroySwinger;    
     }
 

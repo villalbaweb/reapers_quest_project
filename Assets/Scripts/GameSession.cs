@@ -99,6 +99,7 @@ public class GameSession : MonoBehaviour
 
         if(stars == powerupStars)
         {
+            stars = 0;
             _player.PowerUp();
         }
     }

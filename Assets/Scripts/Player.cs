@@ -48,7 +48,6 @@ public class Player : MonoBehaviour
         _circleCollider2d = GetComponent<CircleCollider2D>();
         _gameSession = FindObjectOfType<GameSession>();
         _gameSound = FindObjectOfType<GameSound>();
-        _playerPowerupController = FindObjectOfType<PlayerPowerupController>();
 
         originalGravityScale = _rigidbody2D.gravityScale;
         isAlive = true;
@@ -132,10 +131,15 @@ public class Player : MonoBehaviour
     {
         if(!isDieEnabled) { return; }
 
-        if (!_playerPowerupController.IsPowerupEnabled && IsTouchingLethalLayers())
+        if (!IsPowerUpEnabled() && IsTouchingLethalLayers())
         {
             StartCoroutine(DieHandler());
         }
+    }
+
+    private bool IsPowerUpEnabled()
+    {
+        return _playerPowerupController ? _playerPowerupController.IsPowerupEnabled : false;
     }
 
     private bool IsTouchingLethalLayers()
@@ -217,6 +221,11 @@ public class Player : MonoBehaviour
 
     public void PowerUp()
     {
+        if(!_playerPowerupController)
+        {
+            _playerPowerupController = FindObjectOfType<PlayerPowerupController>();
+        }
+
         _playerPowerupController.PowerUpStart();
     }
 

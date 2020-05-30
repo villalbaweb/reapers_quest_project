@@ -132,7 +132,7 @@ public class Player : MonoBehaviour
     {
         if(!isDieEnabled) { return; }
 
-        if (IsTouchingLethalLayers())
+        if (!_playerPowerupController.IsPowerupEnabled && IsTouchingLethalLayers())
         {
             StartCoroutine(DieHandler());
         }

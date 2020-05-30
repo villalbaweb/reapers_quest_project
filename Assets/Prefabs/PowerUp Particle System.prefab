@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1074389937144784735}
   - component: {fileID: 1074389937144784733}
   - component: {fileID: 1074389937144784734}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Blue Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4763,7 +4763,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1074389937215553972}
   - component: {fileID: 1584977355016362017}
-  m_Layer: 0
+  - component: {fileID: 1430632270487550034}
+  m_Layer: 16
   m_Name: PowerUp Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4799,6 +4800,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c3b7f040a11154abad6c970ca2575e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &1430632270487550034
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074389937215553973}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.8
 --- !u!1 &1074389937782551317
 GameObject:
   m_ObjectHideFlags: 0
@@ -4810,7 +4827,7 @@ GameObject:
   - component: {fileID: 1074389937782551314}
   - component: {fileID: 1074389937782551315}
   - component: {fileID: 1074389937782551316}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Yellow Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9563,7 +9580,7 @@ GameObject:
   - component: {fileID: 1074389938788199792}
   - component: {fileID: 1074389938788199806}
   - component: {fileID: 1074389938788199807}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Red Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}

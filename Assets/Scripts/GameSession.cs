@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameSession : MonoBehaviour
 {
@@ -10,6 +7,10 @@ public class GameSession : MonoBehaviour
     [SerializeField] int playerLives = 3;
     [SerializeField] int coins = 0;
     [SerializeField] int stars = 0;
+
+    [Header("Config")]
+    [SerializeField] int lifeUpCoins = 100;
+    [SerializeField] int powerupStars = 5;
 
 
     // Cache
@@ -75,7 +76,7 @@ public class GameSession : MonoBehaviour
     {
         coins += numberOfCoins;
 
-        if(coins == 100)
+        if(coins == lifeUpCoins)
         {
             playerLives++;
             coins = 0;
@@ -95,6 +96,11 @@ public class GameSession : MonoBehaviour
     public void CollectStar(int numberOfStars)
     {
         stars += numberOfStars;
+
+        if(stars == powerupStars)
+        {
+            _player.PowerUp();
+        }
     }
 
     #endregion

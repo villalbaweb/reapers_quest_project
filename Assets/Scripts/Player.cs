@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     CircleCollider2D _circleCollider2d;
     GameSession _gameSession;
     GameSound _gameSound;
+    PlayerPowerupController _playerPowerupController;
 
     // State
     float originalGravityScale;
@@ -47,6 +48,7 @@ public class Player : MonoBehaviour
         _circleCollider2d = GetComponent<CircleCollider2D>();
         _gameSession = FindObjectOfType<GameSession>();
         _gameSound = FindObjectOfType<GameSound>();
+        _playerPowerupController = FindObjectOfType<PlayerPowerupController>();
 
         originalGravityScale = _rigidbody2D.gravityScale;
         isAlive = true;
@@ -211,6 +213,11 @@ public class Player : MonoBehaviour
     public void SetIsDieEnabled(bool _isDieEnabled)
     {
         isDieEnabled = _isDieEnabled;
+    }
+
+    public void PowerUp()
+    {
+        _playerPowerupController.PowerUpStart();
     }
 
     #endregion

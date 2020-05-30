@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PlayerPowerupController : MonoBehaviour
 {
-    [SerializeField] bool IsPowerupEnabled = false;
+    [SerializeField] float powerUpTime = 20.0f;
+    [SerializeField] bool isPowerupEnabled = false;
 
     PowerUpParticleSystem _powerUpParticleSystem;
 
@@ -10,11 +12,30 @@ public class PlayerPowerupController : MonoBehaviour
     void Start()
     {
         _powerUpParticleSystem = FindObjectOfType<PowerUpParticleSystem>();
+        StopParticleSystem();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void StartParticleSystem()
     {
-        _powerUpParticleSystem?.gameObject.SetActive(IsPowerupEnabled);
+        isPowerupEnabled = true;
+        _powerUpParticleSystem?.gameObject.SetActive(isPowerupEnabled);
+    }
+
+    private void StopParticleSystem()
+    {
+        isPowerupEnabled = false;
+        _powerUpParticleSystem?.gameObject.SetActive(isPowerupEnabled);
+    }
+
+    public void PowerUpStart()
+    {
+        StartCoroutine(PowerUp());
+    }
+
+    IEnumerator PowerUp()
+    {
+        StartParticleSystem();
+        yield return new WaitForSecondsRealtime(powerUpTime);
+        StopParticleSystem();
     }
 }

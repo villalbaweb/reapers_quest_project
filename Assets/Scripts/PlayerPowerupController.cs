@@ -3,10 +3,14 @@ using UnityEngine;
 
 public class PlayerPowerupController : MonoBehaviour
 {
+    // config params
     [SerializeField] float powerUpTime = 20.0f;
-    [SerializeField] bool isPowerupEnabled = false;
 
+    // cached items
     PowerUpParticleSystem _powerUpParticleSystem;
+
+    // public prop
+    public bool IsPowerupEnabled { get; set; }
 
     // Start is called before the first frame update
     void Start()
@@ -17,14 +21,14 @@ public class PlayerPowerupController : MonoBehaviour
 
     private void StartParticleSystem()
     {
-        isPowerupEnabled = true;
-        _powerUpParticleSystem?.gameObject.SetActive(isPowerupEnabled);
+        IsPowerupEnabled = true;
+        _powerUpParticleSystem?.gameObject.SetActive(IsPowerupEnabled);
     }
 
     private void StopParticleSystem()
     {
-        isPowerupEnabled = false;
-        _powerUpParticleSystem?.gameObject.SetActive(isPowerupEnabled);
+        IsPowerupEnabled = false;
+        _powerUpParticleSystem?.gameObject.SetActive(IsPowerupEnabled);
     }
 
     public void PowerUpStart()

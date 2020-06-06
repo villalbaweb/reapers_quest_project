@@ -78,10 +78,17 @@ public class Player : MonoBehaviour
 
         var verticalSpeed = Mathf.Abs(joystickVerticalSpeed) > Mathf.Epsilon ? joystickVerticalSpeed : keyboardVerticalSpeed;
 
+        SetClimbingSpeed(verticalSpeed);
+
         Vector2 playerClimbVelocity = new Vector2(_rigidbody2D.velocity.x, verticalSpeed);
         _rigidbody2D.velocity = playerClimbVelocity;
 
         LadderClimbAnimationHandler(true);
+    }
+
+    private void SetClimbingSpeed(float climbingSpeed)
+    {
+        _animator.SetFloat("VerticalSpeed", climbingSpeed);
     }
 
     private void LadderClimbAnimationHandler(bool isClimbing)

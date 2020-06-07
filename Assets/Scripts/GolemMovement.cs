@@ -6,6 +6,7 @@ public class GolemMovement : MonoBehaviour
     [SerializeField] float patrolSpeed = 1.5f;
     [SerializeField] float attackSpeed = 4f;
     [SerializeField] float chaseDistance = 1f;
+    [SerializeField] float distanceToTurn = 1.5f;
 
     // Cache
     Rigidbody2D _rigidbody2D;
@@ -81,7 +82,7 @@ public class GolemMovement : MonoBehaviour
     private void CalculateDirection()
     {
         float distanceDiff = _player.transform.position.x - transform.position.x;
-        if ((distanceDiff > 0 && !IsFacingRight()) || distanceDiff < 0 && IsFacingRight()) ChangeDirection();
+        if ((distanceDiff > distanceToTurn && !IsFacingRight()) || distanceDiff < -distanceToTurn && IsFacingRight()) ChangeDirection();
     }
 
     private void ChangeDirection()

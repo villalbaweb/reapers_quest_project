@@ -15,6 +15,8 @@ public class GameInstructionsController : MonoBehaviour
     }
 
     private void OnDestroy() {
+        if(!_timer) return;
+
         _timer.OnFinished -= ShowInstructions;
     }
 

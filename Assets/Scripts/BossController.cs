@@ -41,8 +41,8 @@ public class BossController : MonoBehaviour
     {
         if (_enemyHealth.IsDead) return;
         
-        _animator.SetTrigger("TakeDamage");
         _animator.ResetTrigger("TakeDamage");
+        _animator.SetTrigger("TakeDamage");
         PlayHurtSFX();
     }
 

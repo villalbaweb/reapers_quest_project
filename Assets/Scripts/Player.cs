@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     [SerializeField] List<string> lethalLayers;
 
     [Header("Audio Effects")]
-    [SerializeField] AudioClip dieAudioSFX = null;
+    [SerializeField] List<AudioClip> dieAudioSFXs = null;
     [SerializeField] AudioClip lifeupAudioSFX = null;
     [SerializeField] AudioClip shootAudioSFX = null;
 
@@ -166,7 +166,8 @@ public class Player : MonoBehaviour
 
     private void PlayDieSFX()
     {
-        _gameSound.PlayClipAtCamera(dieAudioSFX);
+        int screamIndex = Random.Range(0, dieAudioSFXs.Count);
+        _gameSound.PlayClipAtCamera(dieAudioSFXs[screamIndex]);
     }
 
     private void PlayLifeUpSFX()

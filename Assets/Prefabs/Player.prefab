@@ -5002,7 +5002,12 @@ MonoBehaviour:
   - Boss
   - Golem Enemy
   - BossWeapon
-  dieAudioSFX: {fileID: 8300000, guid: 5607e471e82d5fb408435ddfad91efb3, type: 3}
+  dieAudioSFXs:
+  - {fileID: 8300000, guid: a250d6dec37b13a45a4abcf55ab31705, type: 3}
+  - {fileID: 8300000, guid: c55a33ab17ea12443837afcaee202731, type: 3}
+  - {fileID: 8300000, guid: fd3cc329611402a45a6382b4cb4988f2, type: 3}
+  - {fileID: 8300000, guid: 24dcade7171794c48b661015df3c919d, type: 3}
+  - {fileID: 8300000, guid: dcef8e0cc256781408c69e56552189f9, type: 3}
   lifeupAudioSFX: {fileID: 8300000, guid: b94d129c4cad5b841a98d2df9cc38904, type: 3}
   shootAudioSFX: {fileID: 8300000, guid: 68960fb703a9cf84d90936bfed347c6f, type: 3}
 --- !u!114 &1546666323
@@ -5081,7 +5086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa1d318980e3bb41b4b24c161820b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsPowerupEnabled: 0
+  powerUpTime: 20
 --- !u!1001 &5770348657857374487
 PrefabInstance:
   m_ObjectHideFlags: 0

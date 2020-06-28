@@ -157,9 +157,9 @@ public class Player : MonoBehaviour
     IEnumerator DieHandler()
     {
         isAlive = false;
+        _rigidbody2D.simulated = false;
         PlayDieSFX();
         _animator.SetTrigger("Die");
-        _rigidbody2D.velocity = deathHit;
         yield return new WaitForSeconds(timeToWaitWhendDie);
         _gameSession.ProcessPlayerDeath();
     }
